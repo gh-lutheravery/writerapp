@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, ModalFooter, NavLink } from 'reactstrap';
+import { Container, ModalFooter, NavLink, NavItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { NavMenu } from './NavMenu';
 
