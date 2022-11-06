@@ -12,7 +12,7 @@ export class Layout extends Component {
         <NavMenu />
         <Container>
                 {this.props.children}
-        <ModalFooter className="bg-dark border-bottom-5 border-primary">
+        <ModalFooter className="bg-dark navbar-nav">
             <NavItem>
                 <NavLink tag={Link} className="text-light" to="/counter">Roadmap</NavLink>
             </NavItem>
