@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, ModalFooter } from 'reactstrap';
+import { Container, ModalFooter, NavLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { NavMenu } from './NavMenu';
 
 export class Layout extends Component {
@@ -12,10 +13,21 @@ export class Layout extends Component {
         <Container>
                 {this.props.children}
         <ModalFooter className="bg-dark border-bottom-5 border-primary">
-            <NavLink tag={Link} className="text-dark" to="/counter">Roadmap</NavLink>
-            <NavLink tag={Link} className="text-dark" to="/counter">Privacy Policy</NavLink>
-            <NavLink tag={Link} className="text-dark" to="/counter">Terms of Service</NavLink>
-            <NavLink tag={Link} className="text-dark" to="/counter">Contact</NavLink>
+            <NavItem>
+                <NavLink tag={Link} className="text-light" to="/counter">Roadmap</NavLink>
+            </NavItem>
+
+            <NavItem>
+                <NavLink tag={Link} className="text-light" to="/counter">Privacy Policy</NavLink>
+            </NavItem>
+
+            <NavItem>
+                <NavLink tag={Link} className="text-light" to="/counter">Terms of Service</NavLink>
+            </NavItem>
+
+            <NavItem>
+                <NavLink tag={Link} className="text-light" to="/counter">Contact</NavLink>
+            </NavItem>
         </ModalFooter>
         </Container>
       </div>
