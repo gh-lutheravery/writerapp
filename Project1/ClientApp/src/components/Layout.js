@@ -12,23 +12,22 @@ export class Layout extends Component {
         <NavMenu />
         <Container>
                 {this.props.children}
+
         <ModalFooter className="bg-dark navbar-nav">
             <NavItem>
                 <NavLink tag={Link} className="text-light" to="/counter">Roadmap</NavLink>
             </NavItem>
-
             <NavItem>
                 <NavLink tag={Link} className="text-light" to="/counter">Privacy Policy</NavLink>
             </NavItem>
-
             <NavItem>
                 <NavLink tag={Link} className="text-light" to="/counter">Terms of Service</NavLink>
             </NavItem>
-
             <NavItem>
                 <NavLink tag={Link} className="text-light" to="/counter">Contact</NavLink>
             </NavItem>
         </ModalFooter>
+
         </Container>
       </div>
     );
