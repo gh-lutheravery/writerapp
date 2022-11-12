@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
-import './custom.css'
+import '../custom.css'
 
 export default class App extends Component {
     static displayName = App.name;
