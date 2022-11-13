@@ -63,7 +63,7 @@ export class Payment extends Component {
                             Check me out
                         </Label>
                     </FormGroup>
-                    <Button>
+                    <Button id="auth-btn">
                         Sign in
                     </Button>
                 </Form>
