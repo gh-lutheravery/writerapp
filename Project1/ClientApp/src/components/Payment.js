@@ -8,7 +8,7 @@ export class Payment extends Component {
 
     render() {
         return (
-            <div>
+            <div id="auth-container">
                 <Form>
                     <h2>Payment</h2>
                     <FormGroup>
