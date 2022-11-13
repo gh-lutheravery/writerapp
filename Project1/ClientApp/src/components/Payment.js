@@ -3,8 +3,8 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 import '../custom.css'
 
-export default class App extends Component {
-    static displayName = App.name;
+export class Payment extends Component {
+    static displayName = Payment.name;
 
     render() {
         return (
