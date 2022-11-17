@@ -13,7 +13,7 @@ export class Payment extends Component {
                     <h2>Payment</h2>
                     <FormGroup>
                         <Label for="exampleAddress">
-                            Address
+                            Card Number
                         </Label>
                         <Input
                             id="exampleAddress"
@@ -23,7 +23,7 @@ export class Payment extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleAddress2">
-                            Address 2
+                            Address
                         </Label>
                         <Input
                             id="exampleAddress2"
