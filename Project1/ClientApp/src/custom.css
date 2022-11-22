@@ -30,3 +30,8 @@ code {
     width: 100%;
     background-color: #0066ffff;
 }
+
+#home-link {
+    font-size: large;
+    display: block;
+}
