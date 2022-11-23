@@ -35,3 +35,10 @@ code {
     font-size: large;
     display: block;
 }
+
+#popup-container {
+    width: 130px;
+    height: 60px;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #42414cff;
+}
