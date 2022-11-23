@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react';
+import squareLogo from '../assets/square-logo.png'
 
 export class Popup extends Component {
     static displayName = Popup.name;
@@ -6,9 +7,34 @@ export class Popup extends Component {
     render() {
         return (
             <div>
-                <div id="popup-container">
+                
+                <Card id="popup-container">
+                    <ListGroup flush>
+                        <ListGroupItem>
+                            <CardImg
+                                alt="cool logo icon"
+                                src={squareLogo}
+                                display="span"
+                            />
+                            <CardTitle tag="h5">
+                                Writerapp
+                            </CardTitle>
+                            <Button>
+                                Home
+                            </Button>
+                        </ListGroupItem>
 
-                </div>
+                        <ListGroupItem>
+                            <Button>
+                                Analyze this story on foreign websites
+                            </Button>
+                            <Button>
+                                Analyze this story's popularity
+                            </Button>
+                        </ListGroupItem>
+                    </ListGroup>
+                </Card>
+                
                 <h1>Dashboard</h1>
                 <p>Hello and thank you for using the free tier of writerapp.</p>
                 <a href="#" id="home-link">Click here to report bugs or suggest features.</a>
