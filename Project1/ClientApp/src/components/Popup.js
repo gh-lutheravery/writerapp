@@ -7,7 +7,6 @@ export class Popup extends Component {
     render() {
         return (
             <div>
-                
                 <Card id="popup-container">
                     <ListGroup flush>
                         <ListGroupItem>
@@ -34,12 +33,6 @@ export class Popup extends Component {
                         </ListGroupItem>
                     </ListGroup>
                 </Card>
-                
-                <h1>Dashboard</h1>
-                <p>Hello and thank you for using the free tier of writerapp.</p>
-                <a href="#" id="home-link">Click here to report bugs or suggest features.</a>
-                <a href="#" id="home-link">Frequently asked questions.</a>
-                <Roadmap />
             </div>
         );
     }
