@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react';
+import { Card, ListGroup, ListGroupItem, CardImg, CardTitle, Button } from 'reactstrap';
 import squareLogo from '../assets/square-logo.png'
 
 export class Popup extends Component {
