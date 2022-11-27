@@ -37,8 +37,41 @@ code {
 }
 
 #popup-container {
-    width: 130px;
-    height: 60px;
+    width: 430px;
+    height: 200px;
     border-radius: 5px 5px 5px 5px;
     background-color: #42414cff;
+}
+
+#popup-icon {
+    width: auto;
+}
+
+#popup-title {
+    display: inline;
+    font-size: x-large;
+    vertical-align: middle;
+    margin-left: 5px;
+    color: white;
+}
+
+#popup-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#popup-title-container {
+    display: table-cell;
+}
+
+#popup-home {
+    display: flex;
+}
+
+#popup-btn-group {
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0px 20px 0px 20px;
 }
