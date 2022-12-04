@@ -6,7 +6,8 @@ import { NavMenu } from './NavMenu';
 export class Mentions extends Component {
     static displayName = Layout.name;
 
-    const[dropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownOpen = useState(false);
+    const setDropdownOpen = useState(false);
     const toggle = () => setDropdownOpen((prevState) => !prevState);
 
     render() {
