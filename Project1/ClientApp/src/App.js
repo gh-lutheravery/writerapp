@@ -6,7 +6,7 @@ import { FetchData } from './components/FetchData';
 import { Payment } from './components/Payment';
 
 import './custom.css'
-import { Popup } from './components/Popup';
+import { Mentions } from './components/Mentions';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -15,8 +15,8 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/payment' component={Payment} />
-        <Route path='/popup' component={Popup} />
+            <Route path='/payment' component={Payment} />
+            <Route path='/mentions' component={Mentions} />
       </Layout>
     );
   }

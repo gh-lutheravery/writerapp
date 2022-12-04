@@ -59,8 +59,6 @@ export class Mentions extends Component {
                         </ListGroupItem>
                     </ListGroup>
                 </div>
-
-                <ForeignWebsites/>
             </div>
         );
     }
