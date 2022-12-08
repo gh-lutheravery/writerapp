@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { NavMenu } from './NavMenu';
 
 export class Mentions extends Component {
-    static displayName = Layout.name;
+    static displayName = Mentions.name;
 
     const dropdownOpen = useState(false);
     const setDropdownOpen = useState(false);
@@ -13,7 +13,7 @@ export class Mentions extends Component {
     render() {
         return (
             <div>
-                <h1 style={{ margin: "auto" }}>*Story* Mentions</h1>
+                <h1 style={{ margin: "auto" }}>Story Mentions</h1>
                 <div style={{ display: "flex" }}>
                     <Dropdown isOpen={dropdownOpen} toggle={toggle} {...props}>
                         <DropdownToggle caret size="lg">
