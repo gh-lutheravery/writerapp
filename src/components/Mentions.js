@@ -6,9 +6,17 @@ import { NavMenu } from './NavMenu';
 export class Mentions extends Component {
     static displayName = Mentions.name;
 
-    const dropdownOpen = useState(false);
-    const setDropdownOpen = useState(false);
-    const toggle = () => setDropdownOpen((prevState) => !prevState);
+    get dropdownOpen() {
+        return useState(false);
+    }
+
+    get setDropdownOpen() {
+        return useState(false);
+    }
+
+    get toggle() {
+        return () => setDropdownOpen((prevState) => !prevState);
+    }
 
     render() {
         return (
