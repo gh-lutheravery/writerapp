@@ -40,21 +40,21 @@ export function Mentions() {
                             action
                             active
                             tag="button"
-                            className='website-btn'
+                            id='website-btn'
                         >
                             Reddit
                         </ListGroupItem>
                         <ListGroupItem
                             action
                             tag="button"
-                            className='website-btn'
+                            id='website-btn'
                         >
                             Twitter
                         </ListGroupItem>
                         <ListGroupItem
                             action
                             tag="button"
-                            className='website-btn'
+                            id='website-btn'
                         >
                             TikTok
                         </ListGroupItem>
