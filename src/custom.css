@@ -84,6 +84,7 @@ code {
 
 .sort-btn {
     height: 100%;
+    font-weight: 600;
 }
 #website-list-container {
     width: auto;
