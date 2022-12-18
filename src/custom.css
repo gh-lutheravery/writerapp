@@ -75,3 +75,26 @@ code {
     height: 100%;
     padding: 0px 20px 0px 20px;
 }
+
+#mentions-header {
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sort-btn {
+    height: 100%;
+}
+#website-list-container {
+    width: auto;
+    height: auto;
+}
+
+#website-list {
+    height: 100%;
+}
+
+#website-btn {
+    text-align: center;
+    font-size: x-large;
+}

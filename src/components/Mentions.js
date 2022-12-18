@@ -1,19 +1,32 @@
 ﻿import React, { Component, useState } from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, ListGroup, ListGroupItem } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import { NavMenu } from './NavMenu';
+import { Dropdown, DropdownToggle, DropdownMenu, 
+        ListGroup, ListGroupItem, DropdownItem } from 'reactstrap';
 
 export function Mentions() {
-    const dropdownOpen = useState(false);
-    const setDropdownOpen = useState(false);
+    // 1. make title big
+    // 2. make title centered
+    // 3. make sort by not activated
+    // 4. make two containers in flex container
+    // 5. resize list
+    // 6. enlarge text
+    // 7. put container for list that is dark grey
+    // 8. make text white
+    // 9. change active and hover colors
+    // 10. add padding to list
+    // 11. make sort by more horizontal
+    
+    
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen((prevState) => !prevState);
 
     return (
         <div>
-            <h1 style={{ margin: "auto" }}>Story Mentions</h1>
-            <div style={{ display: "flex" }}>
-                <Dropdown isOpen={dropdownOpen} toggle={toggle} {...props}>
-                    <DropdownToggle caret size="lg">
+            <div style={{ width: "100%" }}>
+                <h1 style={{ margin: "auto", width: "fit-content" }}>Story Mentions</h1>
+            </div>
+            <div id="mentions-header">
+                <Dropdown isOpen={dropdownOpen} toggle={toggle} direction="down">
+                    <DropdownToggle caret size="lg" className='sort-btn'>
                         Sort by
                     </DropdownToggle>
                     <DropdownMenu>
@@ -21,41 +34,32 @@ export function Mentions() {
                         <DropdownItem>Date</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
-
-                <ListGroup horizontal>
-                    <ListGroupItem
-                        action
-                        active
-                        tag="button"
-                    >
-                        Cras justo odio
-                    </ListGroupItem>
-                    <ListGroupItem
-                        action
-                        tag="button"
-                    >
-                        Dapibus ac facilisis in
-                    </ListGroupItem>
-                    <ListGroupItem
-                        action
-                        tag="button"
-                    >
-                        Morbi leo risus
-                    </ListGroupItem>
-                    <ListGroupItem
-                        action
-                        tag="button"
-                    >
-                        Porta ac consectetur ac
-                    </ListGroupItem>
-                    <ListGroupItem
-                        action
-                        disabled
-                        tag="button"
-                    >
-                        Vestibulum at eros
-                    </ListGroupItem>
-                </ListGroup>
+                <div id='website-list-container'>
+                    <ListGroup horizontal id='website-list'>
+                        <ListGroupItem
+                            action
+                            active
+                            tag="button"
+                            className='website-btn'
+                        >
+                            Reddit
+                        </ListGroupItem>
+                        <ListGroupItem
+                            action
+                            tag="button"
+                            className='website-btn'
+                        >
+                            Twitter
+                        </ListGroupItem>
+                        <ListGroupItem
+                            action
+                            tag="button"
+                            className='website-btn'
+                        >
+                            TikTok
+                        </ListGroupItem>
+                    </ListGroup>
+                </div>
             </div>
         </div>
     );

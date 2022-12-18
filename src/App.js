@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
@@ -10,13 +10,15 @@ import { Mentions } from './components/Mentions';
 
 export default class App extends Component {
   static displayName = App.name;
-
+  // route(s) don't work after putting in routes.
   render () {
     return (
       <Layout>
-        <Route exact path='/' component={Home} />
-            <Route path='/payment' component={Payment} />
-            <Route path='/mentions' component={Mentions} />
+        <Routes>
+        <Route exact path='/' element={<Home/>} />
+        <Route path='/payment' element={<Payment/>} />
+        <Route path='/mentions' element={<Mentions/>} />
+        </Routes>
       </Layout>
     );
   }
