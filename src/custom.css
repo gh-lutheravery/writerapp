@@ -82,9 +82,11 @@ code {
     justify-content: space-between;
 }
 
-.sort-btn {
+#sort-btn {
     height: 100%;
     font-weight: 600;
+    width: 10rem;
+    font-size: x-large;
 }
 #website-list-container {
     width: auto;

@@ -9,11 +9,10 @@ export function Mentions() {
     // 4. make two containers in flex container
     // 5. resize list
     // 6. enlarge text
-    // 7. put container for list that is dark grey
-    // 8. make text white
-    // 9. change active and hover colors
     // 10. add padding to list
     // 11. make sort by more horizontal
+    // 12. put onclick and usecallback for actions and set active
+    // 13. use classes to change colors
     
     
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -26,7 +25,7 @@ export function Mentions() {
             </div>
             <div id="mentions-header">
                 <Dropdown isOpen={dropdownOpen} toggle={toggle} direction="down">
-                    <DropdownToggle caret size="lg" className='sort-btn'>
+                    <DropdownToggle caret size="lg" id='sort-btn'>
                         Sort by
                     </DropdownToggle>
                     <DropdownMenu>
@@ -41,6 +40,7 @@ export function Mentions() {
                             active
                             tag="button"
                             id='website-btn'
+                            color='dark'
                         >
                             Reddit
                         </ListGroupItem>
@@ -48,6 +48,7 @@ export function Mentions() {
                             action
                             tag="button"
                             id='website-btn'
+                            color='dark'
                         >
                             Twitter
                         </ListGroupItem>
@@ -55,6 +56,7 @@ export function Mentions() {
                             action
                             tag="button"
                             id='website-btn'
+                            color='dark'
                         >
                             TikTok
                         </ListGroupItem>
