@@ -1,6 +1,6 @@
 ﻿import React, { Component, useState } from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, 
-        ListGroup, ListGroupItem, DropdownItem } from 'reactstrap';
+        ListGroup, ListGroupItem, DropdownItem, ButtonGroup, Button } from 'reactstrap';
 
 export function Mentions() {
     // 1. make title big
@@ -13,10 +13,23 @@ export function Mentions() {
     // 11. make sort by more horizontal
     // 12. put onclick and usecallback for actions and set active
     // 13. use classes to change colors
+    // 14. use freaking buttongroups
     
     
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen((prevState) => !prevState);
+
+    const [cSelected, setCSelected] = useState([]);
+
+    const onCheckboxBtnClick = (selected) => {
+        const index = cSelected.indexOf(selected);
+        if (index < 0) {
+        cSelected.push(selected);
+        } else {
+        cSelected.splice(index, 1);
+        }
+        setCSelected([...cSelected]);
+    };
 
     return (
         <div>
@@ -25,7 +38,7 @@ export function Mentions() {
             </div>
             <div id="mentions-header">
                 <Dropdown isOpen={dropdownOpen} toggle={toggle} direction="down">
-                    <DropdownToggle caret size="lg" id='sort-btn'>
+                    <DropdownToggle caret size="lg" id='sort-btn' color='dark'>
                         Sort by
                     </DropdownToggle>
                     <DropdownMenu>
@@ -34,33 +47,33 @@ export function Mentions() {
                     </DropdownMenu>
                 </Dropdown>
                 <div id='website-list-container'>
-                    <ListGroup horizontal id='website-list'>
-                        <ListGroupItem
-                            action
-                            active
-                            tag="button"
-                            id='website-btn'
-                            color='dark'
+                    <ButtonGroup size='lg'>
+                        <Button
+                        color='dark'
+                        onClick={() => onCheckboxBtnClick(1)}
+                        active={cSelected.includes(1)}
                         >
                             Reddit
-                        </ListGroupItem>
-                        <ListGroupItem
-                            action
-                            tag="button"
-                            id='website-btn'
-                            color='dark'
+                        </Button>
+
+                        <Button
+                        color='dark'
+                        onClick={() => onCheckboxBtnClick(2)}
+                        active={cSelected.includes(2)}
                         >
                             Twitter
-                        </ListGroupItem>
-                        <ListGroupItem
-                            action
-                            tag="button"
-                            id='website-btn'
-                            color='dark'
+                        </Button>
+
+                        <Button
+                        color='dark'
+                        onClick={() => onCheckboxBtnClick(3)}
+                        active={cSelected.includes(3)}
                         >
                             TikTok
-                        </ListGroupItem>
-                    </ListGroup>
+                        </Button>
+                    </ButtonGroup>
+                    
+                
                 </div>
             </div>
         </div>
