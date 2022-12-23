@@ -14,6 +14,7 @@ export function Mentions() {
     // 12. put onclick and usecallback for actions and set active
     // 13. use classes to change colors
     // 14. use freaking buttongroups
+    // 15. create map for posts
     
     
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -33,49 +34,60 @@ export function Mentions() {
 
     return (
         <div>
-            <div style={{ width: "100%" }}>
-                <h1 style={{ margin: "auto", width: "fit-content" }}>Story Mentions</h1>
-            </div>
-            <div id="mentions-header">
-                <Dropdown isOpen={dropdownOpen} toggle={toggle} direction="down">
-                    <DropdownToggle caret size="lg" id='sort-btn' color='dark'>
-                        Sort by
-                    </DropdownToggle>
-                    <DropdownMenu>
-                        <DropdownItem>Popularity</DropdownItem>
-                        <DropdownItem>Date</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown>
-                <div id='website-list-container'>
-                    <ButtonGroup size='lg'>
-                        <Button
-                        color='dark'
-                        onClick={() => onCheckboxBtnClick(1)}
-                        active={cSelected.includes(1)}
-                        >
-                            Reddit
-                        </Button>
+            <div>
+                <div style={{ width: "100%" }}>
+                    <h1 style={{ margin: "auto", width: "fit-content" }}>Story Mentions</h1>
+                </div>
+                <div id="mentions-header">
+                    <Dropdown isOpen={dropdownOpen} toggle={toggle} direction="down">
+                        <DropdownToggle caret size="lg" color='dark'>
+                            Sort by
+                        </DropdownToggle>
+                        <DropdownMenu>
+                            <DropdownItem>Popularity</DropdownItem>
+                            <DropdownItem>Date</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+                    <div id='website-list-container'>
+                        <ButtonGroup size='lg'>
+                            <Button
+                            color='dark'
+                            onClick={() => onCheckboxBtnClick(1)}
+                            active={cSelected.includes(1)}
+                            >
+                                Reddit
+                            </Button>
 
-                        <Button
-                        color='dark'
-                        onClick={() => onCheckboxBtnClick(2)}
-                        active={cSelected.includes(2)}
-                        >
-                            Twitter
-                        </Button>
+                            <Button
+                            color='dark'
+                            onClick={() => onCheckboxBtnClick(2)}
+                            active={cSelected.includes(2)}
+                            >
+                                Twitter
+                            </Button>
 
-                        <Button
-                        color='dark'
-                        onClick={() => onCheckboxBtnClick(3)}
-                        active={cSelected.includes(3)}
-                        >
-                            TikTok
-                        </Button>
-                    </ButtonGroup>
+                            <Button
+                            color='dark'
+                            onClick={() => onCheckboxBtnClick(3)}
+                            active={cSelected.includes(3)}
+                            >
+                                TikTok
+                            </Button>
+                        </ButtonGroup>
+                        
                     
-                
+                    </div>
                 </div>
             </div>
+            {/* <article className=''="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+                    <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                    <small class="text-muted">{{ post.date_posted|date:"F d, Y, P" }}</small>
+                    </div>
+                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                </div>
+            </article> */}
         </div>
     );
 }
