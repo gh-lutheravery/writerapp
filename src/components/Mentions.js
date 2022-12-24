@@ -32,6 +32,22 @@ export function Mentions() {
         setCSelected([...cSelected]);
     };
 
+    // const renderPosts = (posts) => {
+    //     {posts.map(post => {
+    //         return (
+    //             <article className='media content-section'>
+    //             <div className="media-body">
+    //                 <div className="article-metadata">
+    //                 <a className="mr-2">post.website</a>
+    //                 <small className="text-muted">post.date</small>
+    //                 </div>
+    //                 <h2><a className="article-title" href="post.url">post.title</a></h2>
+    //             </div>
+    //             </article>
+    //         )
+    //     })}
+    // };
+
     return (
         <div>
             <div>
@@ -79,15 +95,7 @@ export function Mentions() {
                     </div>
                 </div>
             </div>
-            {/* <article className=''="media content-section">
-                <div class="media-body">
-                    <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-                    <small class="text-muted">{{ post.date_posted|date:"F d, Y, P" }}</small>
-                    </div>
-                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                </div>
-            </article> */}
+            {/* {renderPosts(posts)} */}
         </div>
     );
 }
