@@ -1,5 +1,7 @@
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs'
 
+// use redux for these components to manage state being passed into the levels 
+// of smaller components easier
 
 export function Analytics() {
     return (
