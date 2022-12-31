@@ -1,4 +1,5 @@
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs'
+import { Time } from './Time';
 
 // use redux for these components to manage state being passed into the levels 
 // of smaller components easier

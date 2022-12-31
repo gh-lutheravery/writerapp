@@ -6,7 +6,7 @@ import { FetchData } from './components/FetchData';
 import { Payment } from './components/Payment';
 
 import './custom.css'
-import { Mentions } from './components/Mentions';
+import { Analytics } from './components/Analytics';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -17,7 +17,7 @@ export default class App extends Component {
         <Routes>
         <Route exact path='/' element={<Home/>} />
         <Route path='/payment' element={<Payment/>} />
-        <Route path='/mentions' element={<Mentions/>} />
+        <Route path='/analyze' element={<Analytics/>} />
         </Routes>
       </Layout>
     );

@@ -2,6 +2,8 @@
 import { Dropdown, DropdownToggle, DropdownMenu, 
         ListGroup, ListGroupItem, DropdownItem, ButtonGroup, Button } from 'reactstrap';
 
+// do endless scroll  here, use pkg
+
 export function Mentions() {
     // 1. make title big
     // 2. make title centered
