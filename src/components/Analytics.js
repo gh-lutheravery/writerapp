@@ -1,10 +1,13 @@
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs'
 import { Time } from './Time';
+import { useState } from 'react';
 
 // use redux for these components to manage state being passed into the levels 
 // of smaller components easier
 
 export function Analytics() {
+    const [tabIndex, setTabIndex] = useState(0);
+
     return (
         <div>
             <div>
@@ -12,7 +15,7 @@ export function Analytics() {
                     <h1 style={{ margin: "auto", width: "fit-content" }}>*Story* Analytics</h1>
                 </div>
 
-                <Tabs>
+                <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList>
                         <Tab>Time</Tab>
                     </TabList>
