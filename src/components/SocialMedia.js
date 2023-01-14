@@ -4,11 +4,11 @@ export function SocialMedia() {
     return (
         <div>
             <div style={{ marginBottom: "1rem"}}>
-                <h2>This story has been released for *timeReleasedString*</h2>
+                <h2>Mentions on other websites since release</h2>
             </div>
             <div id="popularity-container">
                 <div>
-                    <h2>Popularity Graph</h2>
+                    <h2>Mentions Graph</h2>
                 </div>
                 
                 <ResponsiveContainer width="100%" height={450}>
