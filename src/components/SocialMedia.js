@@ -1,11 +1,33 @@
 import { Popularity } from './Popularity';
 
 export function SocialMedia() {
+
+    const renderSites = (sites) => {
+        {sites.map(site => {
+            return (
+                <ListGroupItem className="justify-content-between">
+                    {site.name}{' '}
+                    <Badge>
+                        Posts: {site.postStat}
+                    </Badge>
+                    <Badge>
+                        Total Likes: {site.likeStat}
+                    </Badge>
+                </ListGroupItem>
+            )
+        })}
+    };
+
     return (
         <div>
             <div style={{ marginBottom: "1rem"}}>
                 <h2>Mentions on other websites since release</h2>
             </div>
+
+            <ListGroup>
+                props.renderSites()
+            </ListGroup>
+
             <div id="popularity-container">
                 <div>
                     <h2>Mentions Graph</h2>
