@@ -6,9 +6,9 @@ export function Genre() {
         {genres.map(genre => {
             return (
                 <ListGroupItem className="justify-content-between">
-                    genre.name{' '}
+                    {genre.name}{' '}
                     <Badge>
-                        genre.numStat
+                        {genre.numStat}
                     </Badge>
                 </ListGroupItem>
             )
