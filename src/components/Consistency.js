@@ -1,7 +1,7 @@
 import { AreaChart, CartesianGrid, XAxis, 
         YAxis, Tooltip, Legend, Area, ResponsiveContainer } from 'recharts'
 
-export function Popularity() {
+export function Consistency() {
     // const data = props.reduxDataList
     // const data = [{ name: 'a', value: [2, 4, 34, 32, 3, 5, 53, 73, 
     //     79, 133, 423, 468, 785, 1254, 2311] }]
