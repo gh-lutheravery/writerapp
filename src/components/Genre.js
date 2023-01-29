@@ -1,5 +1,5 @@
 import { Popularity } from './Popularity';
-import {ListGroup, ListGroupItem} from 'reactstrap'
+import {ListGroup, ListGroupItem, Badge} from 'reactstrap'
 
 export function Genre() {
     const renderGenres = (genres) => {
@@ -22,8 +22,8 @@ export function Genre() {
                     <h2>How popular is the genre it is in?</h2>
                 </div>
                 
-                <ListGroup>
-                    props.renderGenres()
+                <ListGroup> 
+                    {props.renderGenres()}
                 </ListGroup>
             </div>
         </div>
