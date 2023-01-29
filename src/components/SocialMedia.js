@@ -73,7 +73,7 @@ export function SocialMedia() {
             </div>
 
             <ListGroup>
-                {props.renderSites()}
+                {/*props.renderSites()*/}
             </ListGroup>
 
             <div id="popularity-container">

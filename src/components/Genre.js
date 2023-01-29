@@ -23,7 +23,7 @@ export function Genre() {
                 </div>
                 
                 <ListGroup> 
-                    {props.renderGenres()}
+                    {/*props.renderGenres()*/}
                 </ListGroup>
             </div>
         </div>
