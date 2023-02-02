@@ -1,8 +1,7 @@
 ﻿import React, { Component } from 'react';
-import { Card, ListGroup, ListGroupItem, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
+import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
 import squareLogo from '../assets/square-logo.png'
-// !!!!!!!!!!!!!!figure out what components to use to structure popup!!!!!!!!!!!!!!
-// properly organize base flex elements
+
 export class Popup extends Component {
     static displayName = Popup.name;
 
@@ -35,10 +34,7 @@ export class Popup extends Component {
 
                     <div id="popup-btn-group">
                         <Button>
-                            Analyze this story on foreign websites
-                        </Button>
-                        <Button>
-                            Analyze this story's popularity
+                            Analyze this story
                         </Button>
                     </div>
                 </Card>
