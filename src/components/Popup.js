@@ -5,6 +5,10 @@ import squareLogo from '../assets/square-logo.png'
 export class Popup extends Component {
     static displayName = Popup.name;
 
+    openAnalyze = () => {
+        
+    }
+
     render() {
         return (
             <div>
