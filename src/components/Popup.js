@@ -5,6 +5,10 @@ import squareLogo from '../assets/square-logo.png'
 export class Popup extends Component {
     static displayName = Popup.name;
 
+    openAnalyze = () => {
+        window.open("file:///../pages/analyze.html")
+    }
+
     render() {
         return (
             <div>
@@ -33,7 +37,7 @@ export class Popup extends Component {
                     </CardHeader>
 
                     <div id="popup-btn-group">
-                        <Button>
+                        <Button onClick={this.openAnalyze()}>
                             Analyze this story
                         </Button>
                     </div>
