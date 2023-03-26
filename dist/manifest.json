@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Writerapp",
+  "version": "1.0",
+
+  "description": "Adds a boneless browser action icon to the toolbar. Click the button to choose a beast. The active tab's body content is then replaced with a picture of the chosen beast. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#beastify",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_title": "Writerapp",
+    "default_icon": "src/assets/square-logo.png",
+    "default_popup": "src/pages/popup.html"
+  },
+
+  "web_accessible_resources": [
+    "src/assets/square-logo.png",
+    "src/assets/wa-logo.png"
+  ],
+
+  "options_ui": {
+    "page": "src/pages/home.html",
+    "browser_style": true
+  }
+  
+  
+}

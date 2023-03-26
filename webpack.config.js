@@ -5,11 +5,22 @@ const path = require("path")
 
 module.exports = {
     mode: "development",
-    entry: "src/index.js",
+    entry: "./src/index.js",
     module: {
         rules: [
             {
-                exclude: "/node_modules/"
+                loader: "babel-loader",
+                test: /\.js?$/i,
+                exclude: "/node_modules/",
+                options: { presets: ['@babel/preset-env','@babel/preset-react'] },
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.html$/i,
+                exclude: "/src/pages/",
             }
         ]
     },

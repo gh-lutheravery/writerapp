@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/standalone": "^7.21.2"
+    "@babel/standalone": "^7.21.2",
+    "webpack-cli": "^5.0.1"
   }
 }
