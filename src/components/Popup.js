@@ -5,9 +5,9 @@ import squareLogo from '../assets/square-logo.png'
 export class Popup extends Component {
     static displayName = Popup.name;
 
-    openAnalyze = () => {
+    /*openAnalyze = () => {
         window.open("file:///../pages/analyze.html")
-    }
+    }*/
 
     render() {
         return (

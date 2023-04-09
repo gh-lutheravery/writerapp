@@ -38,6 +38,10 @@ module.exports = {
                 { from: path.resolve("src/assets/wa-logo.png"), to: path.resolve("dist") }
                 //{ from: "other", to: "public" }
             ],
+        }),
+        new HtmlPlugin({
+            title: "Writerapp",
+            filename: "popup.html"
         })
     ],
 
