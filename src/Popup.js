@@ -1,13 +1,10 @@
 ﻿import React, { Component } from 'react';
 import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
 import squareLogo from '../assets/square-logo.png'
+import { Analytics } from './components/Analytics';
 
 export class Popup extends Component {
     static displayName = Popup.name;
-
-    /*openAnalyze = () => {
-        window.open("file:///../pages/analyze.html")
-    }*/
 
     render() {
         return (
@@ -37,7 +34,7 @@ export class Popup extends Component {
                     </CardHeader>
 
                     <div id="popup-btn-group">
-                        <Button onClick={this.openAnalyze()}>
+                        <Button onClick={<Analytics/>}>
                             Analyze this story
                         </Button>
                     </div>
