@@ -1,5 +1,6 @@
 import { RoyalRoadAPI } from '@mh1024/royalroadl-api/dist/royalroad';
 import { Fiction } from '@mh1024/royalroadl-api/dist/services/fiction';
+import { Fictions } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/chapter';
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
@@ -9,12 +10,37 @@ export class Analytics {
         this.api = rrApi;
     }
 
-    public async getPopularityAnalytics(url: string) {
+    private async getFiction(url: string) {
         // func that grabs id from url in analyze class
         const trimmedUrl: string = url.trim();
         const id: number = +trimmedUrl.slice(34, 39);
         // this.api.fiction.getFiction()
         const fict: Fiction = this.api.fiction.getFiction(id);
+        return fict;
+    }
+
+    public async getPrevWorksAnalytics(url: string) {
+        // get amount of prev works:
+        // get fiction from url
+        const fict: Fiction = this.getFiction(url);
+        // get author name from fiction obj
+        const authorName: string = fict.author.name;
+        // search author name
+        const prevWorksBlurbs: Fictions = this.api.fictions.search(authorName);
+
+
+        // get time inbetween:
+        // check if list is empty or 1
+        // for loop through search results, for each fiction, get timestamp, put in list
+        // calculate difference and put in obj
+
+        // get pop:
+        // for loop through search results, get followers numbers for each, put in obj
+    }
+
+    public async getPopularityAnalytics(url: string) {
+        // func that grabs id from url in analyze class
+        const fict: Fiction = this.getFiction(url);
         // func that grabs num from review url in analyze class
         // func that loops through chapter array and gets real chapter list
         let twoDimComArray: [ChapterComment[]] = [[]];
@@ -67,4 +93,6 @@ export class Analytics {
         // put result in obj
         return comDict;
     }
+
+
 }
