@@ -4,6 +4,11 @@ import { SearchBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/chapter';
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
+export class PrevWorkStats {
+    public readonly TimeStamp: Date;
+    public readonly Followers: number;
+}
+
 export class Analytics {
     public readonly api: RoyalRoadAPI;
     constructor(rrApi: RoyalRoadAPI) {
@@ -31,6 +36,9 @@ export class Analytics {
         const authorName: string = fict.author.name;
         // search author name
         const prevWorksBlurbs: SearchBlurb[] = this.api.fictions.search(authorName);
+        if (prevWorksBlurbs.length <= 1) {
+            return {};
+        }
 
         // find and delete the selected fiction in list
         const selectedId = this.getId(url);
@@ -41,7 +49,21 @@ export class Analytics {
 
         // get time inbetween:
         // check if list is empty or 1
+        
+        let prevWorksDict = new Map();
         // for loop through search results, for each fiction, get timestamp, put in list
+        prevWorksBlurbs.forEach((bl: SearchBlurb) => {
+            while(true) { 
+                try {
+                    const comArray: ChapterComment[] = this.api.chapter.getComments(ch.id, page);
+                    twoDimComArray.push(comArray)
+                    page++;
+                }
+                catch (error) {
+                    break;
+                }
+            }
+        });
         // calculate difference and put in obj
 
         // get pop:
