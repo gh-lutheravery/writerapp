@@ -5,8 +5,13 @@ import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/ch
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
 export class PrevWorkStats {
-    public readonly TimeStamp: Date;
-    public readonly Followers: number;
+    private readonly TimeStamp: Date;
+    private readonly Followers: number;
+
+    constructor(timeStamp: RoyalRoadAPI, followers: number) {
+        this.TimeStamp = timeStamp;
+        this.Followers = followers;
+    }
 }
 
 export class Analytics {
@@ -53,16 +58,7 @@ export class Analytics {
         let prevWorksDict = new Map();
         // for loop through search results, for each fiction, get timestamp, put in list
         prevWorksBlurbs.forEach((bl: SearchBlurb) => {
-            while(true) { 
-                try {
-                    const comArray: ChapterComment[] = this.api.chapter.getComments(ch.id, page);
-                    twoDimComArray.push(comArray)
-                    page++;
-                }
-                catch (error) {
-                    break;
-                }
-            }
+            prevWorksBlurbs[bl.id] = 
         });
         // calculate difference and put in obj
 
