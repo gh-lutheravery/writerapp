@@ -1,6 +1,6 @@
 import { RoyalRoadAPI } from '@mh1024/royalroadl-api/dist/royalroad';
 import { Fiction } from '@mh1024/royalroadl-api/dist/services/fiction';
-import { Fictions } from '@mh1024/royalroadl-api/dist/services/fictions';
+import { SearchBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/chapter';
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
@@ -18,6 +18,7 @@ export class Analytics {
     }
 
     private async getFiction(url: string) {
+        const id: number = this.getId(url);
         const fict: Fiction = this.api.fiction.getFiction(id);
         return fict;
     }
@@ -29,8 +30,14 @@ export class Analytics {
         // get author name from fiction obj
         const authorName: string = fict.author.name;
         // search author name
-        const prevWorksBlurbs: Fictions = this.api.fictions.search(authorName);
+        const prevWorksBlurbs: SearchBlurb[] = this.api.fictions.search(authorName);
 
+        // find and delete the selected fiction in list
+        const selectedId = this.getId(url);
+        const selectedFictIndex = prevWorksBlurbs.findIndex(f => f.id == selectedId);
+        if (selectedFictIndex > -1) {
+            prevWorksBlurbs.splice(selectedFictIndex, 1);
+        }
 
         // get time inbetween:
         // check if list is empty or 1
