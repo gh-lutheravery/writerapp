@@ -10,11 +10,14 @@ export class Analytics {
         this.api = rrApi;
     }
 
-    private async getFiction(url: string) {
-        // func that grabs id from url in analyze class
+    // func that grabs id from url in analyze class
+    private getId(url: string) {
         const trimmedUrl: string = url.trim();
         const id: number = +trimmedUrl.slice(34, 39);
-        // this.api.fiction.getFiction()
+        return id;
+    }
+
+    private async getFiction(url: string) {
         const fict: Fiction = this.api.fiction.getFiction(id);
         return fict;
     }
