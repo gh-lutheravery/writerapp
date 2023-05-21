@@ -8,7 +8,7 @@ export class PrevWorkStats {
     private readonly TimeStamp: Date;
     private readonly Followers: number;
 
-    constructor(timeStamp: RoyalRoadAPI, followers: number) {
+    constructor(timeStamp: Date, followers: number) {
         this.TimeStamp = timeStamp;
         this.Followers = followers;
     }
@@ -58,7 +58,11 @@ export class Analytics {
         let prevWorksDict = new Map();
         // for loop through search results, for each fiction, get timestamp, put in list
         prevWorksBlurbs.forEach((bl: SearchBlurb) => {
-            prevWorksBlurbs[bl.id] = 
+            // get fiction again
+            const blUrl = "https://royalroad.com/fiction/" + bl.id;
+            const blFict: Fiction = this.getFiction(blUrl);
+            const firstRelease: Date = new Date(blFict.chapters[0].release);
+            prevWorksBlurbs[bl.id] = new PrevWorkStats(firstRelease, +blFict.stats.followers)
         });
         // calculate difference and put in obj
 
@@ -76,7 +80,7 @@ export class Analytics {
 
         /*
         const req = this.api.Requester;
-        const baseUrl = trimmedUrl.slice(0, 24);
+        const baseUrl = trimmedUrl.slice(0, 24);+
         const htmlPage = await this.req.get(
             `/fiction/0/_/chapter/${String(ch.id)}/_`,
         );
