@@ -33,6 +33,9 @@ export class Analytics {
         return fict;
     }
 
+    public async getGenreAnalytics(url: string) {
+    }
+
     public async getPrevWorksAnalytics(url: string) {
         // get amount of prev works:
         // get fiction from url
@@ -64,10 +67,8 @@ export class Analytics {
             const firstRelease: Date = new Date(blFict.chapters[0].release);
             prevWorksBlurbs[bl.id] = new PrevWorkStats(firstRelease, +blFict.stats.followers)
         });
-        // calculate difference and put in obj
-
-        // get pop:
-        // for loop through search results, get followers numbers for each, put in obj
+        
+        return prevWorksBlurbs;
     }
 
     public async getPopularityAnalytics(url: string) {
