@@ -15,6 +15,18 @@ export class PrevWorkStats {
     }
 }
 
+export class GenreStats {
+    private readonly PrevelenceRating: number;
+    private readonly Name: string;
+    private readonly IsMatch: boolean;
+
+    constructor(prevelenceRating: number, name: string, isMatch: boolean) {
+        this.PrevelenceRating = prevelenceRating;
+        this.Name = name;
+        this.IsMatch = isMatch;
+    }
+}
+
 export class Analytics {
     public readonly api: RoyalRoadAPI;
 
@@ -66,7 +78,8 @@ export class Analytics {
     }
 
     public async getGenreAnalytics(url: string) {
-        
+        const fict: Fiction = this.getFiction(url);
+
     }
 
     public async getPrevWorksAnalytics(url: string) {
