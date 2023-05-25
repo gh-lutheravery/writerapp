@@ -18,9 +18,9 @@ export class PrevWorkStats {
 export class Analytics {
     public readonly api: RoyalRoadAPI;
 
-    private readonly GENRES: Set<string> = new Set<string>(["ACTION", "ADVENTURE", "COMEDY", "CONTEMPORARY", "DRAMA", 
+    private readonly GENRES: string[] = ["ACTION", "ADVENTURE", "COMEDY", "CONTEMPORARY", "DRAMA", 
     "FANTASY", "HISTORICAL", "HORROR", "MYSTERY", "PSYCHOLOGICAL", "ROMANCE", "SATIRE", "SCI-FI", 
-    "SHORT STORY", "TRAGEDY"]);
+    "SHORT STORY", "TRAGEDY"];
 
     constructor(rrApi: RoyalRoadAPI) {
         this.api = rrApi;
@@ -39,24 +39,30 @@ export class Analytics {
         return fict;
     }
 
-    // grabs genres from best rated, sorted by occurence
     public async getPopularGenres() {
         const blurbs: PopularBlurb[] = this.api.fictions.getBest();
-        const tags: string[] = [];
+        let tags: string[] = [];
+        let tagPopularity: Map<string, number> = new Map();
         for (let bl of blurbs) {
             for (let tag of bl.tags) {
-                if (this.GENRES.has(tag)) {
+                // if this tag appears in the constant genre list
+                if (this.GENRES.find((genre) => genre === tag) !== undefined) {
                     tags.push(tag)
                 }
             }
         }
-        
-        /* w
-        get best fictions
-        get corresponding tags
-        make dict with tags and number of occurences
-        */
 
+        // make dict with tags and number of occurences
+        for (let t of tags) {
+            if (tagPopularity.has(t)) {
+                tagPopularity[t]++;
+            }
+            else {
+                tagPopularity[t] = 1;
+            }
+        }
+
+        return tagPopularity;
     }
 
     public async getGenreAnalytics(url: string) {
