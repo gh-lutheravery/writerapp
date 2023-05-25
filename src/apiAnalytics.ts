@@ -2,6 +2,7 @@ import { RoyalRoadAPI } from '@mh1024/royalroadl-api/dist/royalroad';
 import { Fiction } from '@mh1024/royalroadl-api/dist/services/fiction';
 import { SearchBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/chapter';
+import { PopularBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
 export class PrevWorkStats {
@@ -16,7 +17,7 @@ export class PrevWorkStats {
 
 export class Analytics {
     public readonly api: RoyalRoadAPI;
-    
+
     private readonly GENRES: string[] = ["ACTION", "ADVENTURE", "COMEDY", "CONTEMPORARY", "DRAMA", 
     "FANTASY", "HISTORICAL", "HORROR", "MYSTERY", "PSYCHOLOGICAL", "ROMANCE", "SATIRE", "SCI-FI", 
     "SHORT STORY", "TRAGEDY"];
@@ -36,6 +37,27 @@ export class Analytics {
         const id: number = this.getId(url);
         const fict: Fiction = this.api.fiction.getFiction(id);
         return fict;
+    }
+
+    // grabs genres from best rated, sorted by occurence
+    public async getPopularGenres() {
+        const blurbs: PopularBlurb[] = this.api.fictions.getBest();
+        const tags: string[] = [];
+        for (let bl of blurbs) {
+            for (let tag of bl.tags) {
+                // if this tag appears in the constant genre list
+                if (this.GENRES.find((genre) => genre === tag) !== undefined) {
+                    tags.push(tag)
+                }
+            }
+        }
+        
+        /* w
+        get best fictions
+        get corresponding tags
+        make dict with tags and number of occurences
+        */
+
     }
 
     public async getGenreAnalytics(url: string) {
