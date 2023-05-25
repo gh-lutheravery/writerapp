@@ -16,6 +16,11 @@ export class PrevWorkStats {
 
 export class Analytics {
     public readonly api: RoyalRoadAPI;
+    
+    private readonly GENRES: string[] = ["ACTION", "ADVENTURE", "COMEDY", "CONTEMPORARY", "DRAMA", 
+    "FANTASY", "HISTORICAL", "HORROR", "MYSTERY", "PSYCHOLOGICAL", "ROMANCE", "SATIRE", "SCI-FI", 
+    "SHORT STORY", "TRAGEDY"];
+
     constructor(rrApi: RoyalRoadAPI) {
         this.api = rrApi;
     }
@@ -34,6 +39,7 @@ export class Analytics {
     }
 
     public async getGenreAnalytics(url: string) {
+        
     }
 
     public async getPrevWorksAnalytics(url: string) {
