@@ -18,9 +18,9 @@ export class PrevWorkStats {
 export class Analytics {
     public readonly api: RoyalRoadAPI;
 
-    private readonly GENRES: string[] = ["ACTION", "ADVENTURE", "COMEDY", "CONTEMPORARY", "DRAMA", 
+    private readonly GENRES: Set<string> = new Set<string>(["ACTION", "ADVENTURE", "COMEDY", "CONTEMPORARY", "DRAMA", 
     "FANTASY", "HISTORICAL", "HORROR", "MYSTERY", "PSYCHOLOGICAL", "ROMANCE", "SATIRE", "SCI-FI", 
-    "SHORT STORY", "TRAGEDY"];
+    "SHORT STORY", "TRAGEDY"]);
 
     constructor(rrApi: RoyalRoadAPI) {
         this.api = rrApi;
@@ -45,8 +45,7 @@ export class Analytics {
         const tags: string[] = [];
         for (let bl of blurbs) {
             for (let tag of bl.tags) {
-                // if this tag appears in the constant genre list
-                if (this.GENRES.find((genre) => genre === tag) !== undefined) {
+                if (this.GENRES.has(tag)) {
                     tags.push(tag)
                 }
             }
