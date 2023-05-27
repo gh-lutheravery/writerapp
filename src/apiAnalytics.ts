@@ -5,12 +5,12 @@ import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/ch
 import { PopularBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
-export class GenreMatch {
-    private readonly IsMatch: boolean;
+export class GenrePopularity {
+    private readonly PopRating: number;
     private readonly Name: string;
 
-    constructor(isMatch: boolean, name: string) {
-        this.IsMatch = isMatch;
+    constructor(popRating: number, name: string) {
+        this.PopRating = popRating;
         this.Name = name;
     }
 }
