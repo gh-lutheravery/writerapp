@@ -5,6 +5,16 @@ import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/ch
 import { PopularBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
+export class GenreMatch {
+    private readonly IsMatch: boolean;
+    private readonly Name: string;
+
+    constructor(isMatch: boolean, name: string) {
+        this.IsMatch = isMatch;
+        this.Name = name;
+    }
+}
+
 export class PrevWorkStats {
     private readonly TimeStamp: Date;
     private readonly Followers: number;
@@ -51,7 +61,7 @@ export class Analytics {
         return fict;
     }
 
-    public async getPopularGenres() {
+    public getPopularGenres() {
         const blurbs: PopularBlurb[] = this.api.fictions.getBest();
         let tags: string[] = [];
         let tagPopularity: Map<string, number> = new Map();
@@ -79,7 +89,27 @@ export class Analytics {
 
     public async getGenreAnalytics(url: string) {
         const fict: Fiction = this.getFiction(url);
+        // make PG an obj list
+        
+        const popularGenres: Map<string, number> = this.getPopularGenres();
+        const descSortedPG = new Map([...popularGenres.entries()].sort((a, b) => b[1] - a[1]));
+        
+        // see genre matches betweeen tag popularity keys and current fiction tags
+        let genreMatches: Map<string, boolean> = new Map();
+        for (var i = 0; i < 4; i++) {
+            for (let tag of fict.tags) {
+                const currentGenre = descSortedPG[i];
+                // if this tag appears in the constant genre list
+                if (this.GENRES.find((currentGenre) => currentGenre === tag) !== undefined) {
+                    genreMatches[currentGenre]
+                }
+            }
+        }
 
+        for (let genre of popularGenres) {
+            
+        }
+        //const genreStatArray: GenreStats[] = 
     }
 
     public async getPrevWorksAnalytics(url: string) {
