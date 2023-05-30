@@ -105,21 +105,22 @@ export class Analytics {
         const popularGenres: GenrePopularity[] = this.getPopularGenres();
         const descSortedPG = popularGenres.sort(g => g.PopRating).reverse();
         
-        // see genre matches betweeen tag popularity keys and current fiction tags
-        let genreMatches: Map<string, boolean> = new Map();
-        for (var i = 0; i < 4; i++) {
-            for (let tag of fict.tags) {
-                const currentGenre = descSortedPG[i];
-                // if this tag appears in the constant genre list
-                if (this.GENRES.find((currentGenre) => currentGenre === tag) !== undefined) {
-                    genreMatches[currentGenre]
-                }
+        // see genre matches betweeen top 5 tag popularity keys and current fiction tags
+        let genreMatches: GenreMatch[] = [];
+        for (var i = 0; i < 4; i++) {  
+            const currentGenre = descSortedPG[i].Name;
+
+            // if this tag appears in the constant genre list
+            if (fict.tags.find((tag) => tag === currentGenre) !== undefined) {
+                genreMatches.push(new GenreMatch(true, currentGenre))
+            }
+
+            else {
+                genreMatches.push(new GenreMatch(false, currentGenre))
             }
         }
 
-        for (let genre of popularGenres) {
-            
-        }
+        
         //const genreStatArray: GenreStats[] = 
     }
 
