@@ -6,8 +6,8 @@ import { PopularBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
 export class GenrePopularity {
-    private readonly PopRating: number;
-    private readonly Name: string;
+    public PopRating: number;
+    public readonly Name: string;
 
     constructor(popRating: number, name: string) {
         this.PopRating = popRating;
@@ -64,7 +64,7 @@ export class Analytics {
     public getPopularGenres() {
         const blurbs: PopularBlurb[] = this.api.fictions.getBest();
         let tags: string[] = [];
-        let tagPopularity: Map<string, number> = new Map();
+        let tagPopularity: GenrePopularity[] = [];
         for (let bl of blurbs) {
             for (let tag of bl.tags) {
                 // if this tag appears in the constant genre list
@@ -74,13 +74,14 @@ export class Analytics {
             }
         }
 
-        // make dict with tags and number of occurences
+        // make list with tags and number of occurences
         for (let t of tags) {
-            if (tagPopularity.has(t)) {
-                tagPopularity[t]++;
+            if (tagPopularity.find((obj) => obj.Name === t) !== undefined) {
+                const index = tagPopularity.findIndex((obj) => obj.Name === t)
+                tagPopularity[index].PopRating++;
             }
             else {
-                tagPopularity[t] = 1;
+                tagPopularity.push(new GenrePopularity(1, t));
             }
         }
 
