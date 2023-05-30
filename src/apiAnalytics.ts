@@ -112,16 +112,27 @@ export class Analytics {
 
             // if this tag appears in the constant genre list
             if (fict.tags.find((tag) => tag === currentGenre) !== undefined) {
-                genreMatches.push(new GenreMatch(true, currentGenre))
+                genreMatches.push(new GenreMatch(true, currentGenre));
             }
 
             else {
-                genreMatches.push(new GenreMatch(false, currentGenre))
+                genreMatches.push(new GenreMatch(false, currentGenre));
             }
         }
 
+        const genreStatArray: GenreStats[] = []
+        for (let match of genreMatches) {
+            const index = popularGenres.findIndex((rating) => rating.Name === match.Name);
+            const genrePop: GenrePopularity = popularGenres[index];
+
+            genreStatArray.push(new GenreStats(
+                genrePop.PopRating, 
+                genrePop.Name, 
+                match.IsMatch
+                ));
+        }
         
-        //const genreStatArray: GenreStats[] = 
+        return genreStatArray;
     }
 
     public async getPrevWorksAnalytics(url: string) {
