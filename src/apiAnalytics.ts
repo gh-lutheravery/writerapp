@@ -15,6 +15,16 @@ export class GenrePopularity {
     }
 }
 
+export class GenreMatch {
+    public IsMatch: boolean;
+    public readonly Name: string;
+
+    constructor(isMatch: boolean, name: string) {
+        this.IsMatch = isMatch;
+        this.Name = name;
+    }
+}
+
 export class PrevWorkStats {
     private readonly TimeStamp: Date;
     private readonly Followers: number;
@@ -92,8 +102,8 @@ export class Analytics {
         const fict: Fiction = this.getFiction(url);
         // make PG an obj list
         
-        const popularGenres: Map<string, number> = this.getPopularGenres();
-        const descSortedPG = new Map([...popularGenres.entries()].sort((a, b) => b[1] - a[1]));
+        const popularGenres: GenrePopularity[] = this.getPopularGenres();
+        const descSortedPG = popularGenres.sort(g => g.PopRating).reverse();
         
         // see genre matches betweeen tag popularity keys and current fiction tags
         let genreMatches: Map<string, boolean> = new Map();
