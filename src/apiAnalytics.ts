@@ -1,5 +1,5 @@
 import { RoyalRoadAPI } from '@mh1024/royalroadl-api/dist/royalroad';
-import { Fiction } from '@mh1024/royalroadl-api/dist/services/fiction';
+import { Fiction, FictionChapter } from '@mh1024/royalroadl-api/dist/services/fiction';
 import { SearchBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/chapter';
 import { PopularBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
@@ -70,6 +70,8 @@ export class Analytics {
         const fict: Fiction = this.api.fiction.getFiction(id);
         return fict;
     }
+
+
 
     public getPopularGenres() {
         const blurbs: PopularBlurb[] = this.api.fictions.getBest();
@@ -170,6 +172,8 @@ export class Analytics {
         return prevWorksBlurbs;
     }
 
+    // returns a dictionary that stores a list of months with a 
+    // corresponding list of comments posted that month to indicate popularity
     public async getPopularityAnalytics(url: string) {
         // func that grabs id from url in analyze class
         const fict: Fiction = this.getFiction(url);
@@ -226,5 +230,36 @@ export class Analytics {
         return comDict;
     }
 
+    public async getConsistencyAnalytics(url: string) {
+        // func that grabs id from url in analyze class
+        const fict: Fiction = this.getFiction(url);
+
+        const chapterArray: FictionChapter[] = fict.chapters;
+
+        // func that sorts comment list asc
+        const chapterReleaseArray: number[] = Array.from(chapterArray, ch => ch.release);
+        const chapterDateArray: Date[] = Array.from(chapterReleaseArray, r => new Date(r));
+
+        const ascDateArray: FictionChapter[] = chapterDateArray.sort();
+        
+        // func that makes dict based on months for each comment
+        let comDict = new Map();
+        let month: number = 0;
+        for (let com of ascComArray) {
+            const date = new Date(com.release);
+            if (month < date.getMonth()) {
+                comDict[date.getMonth()] = []
+                month = date.getMonth();
+            }
+            else {
+                // add com
+                comDict[month].push(com)
+            }
+        }
+        
+        // put result in obj
+        return comDict;
+    }
+    // consis: copy above func and use the part that uses flattened list to account for flat chapters, then fill in gaps
 
 }
