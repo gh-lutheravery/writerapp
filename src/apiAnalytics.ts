@@ -243,22 +243,21 @@ export class Analytics {
         const ascDateArray: FictionChapter[] = chapterDateArray.sort();
         
         // func that makes dict based on months for each comment
-        let comDict = new Map();
+        let dateDict = new Map();
         let month: number = 0;
-        for (let com of ascComArray) {
-            const date = new Date(com.release);
+        for (let date of ascDateArray) {
             if (month < date.getMonth()) {
-                comDict[date.getMonth()] = []
+                dateDict[date.getMonth()] = []
                 month = date.getMonth();
             }
             else {
                 // add com
-                comDict[month].push(com)
+                dateDict[month].push(date)
             }
         }
         
         // put result in obj
-        return comDict;
+        return dateDict;
     }
     // consis: copy above func and use the part that uses flattened list to account for flat chapters, then fill in gaps
 

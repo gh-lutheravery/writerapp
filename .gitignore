@@ -2,7 +2,7 @@
 
 
 # test file for testing behaivor of libaries
-test.js
+/src/test.ts
 
 # dependencies
 /node_modules
