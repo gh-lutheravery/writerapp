@@ -262,15 +262,15 @@ export class Analytics {
                 monthYear = date;
                 tally++;
             }
-            
+
             else {
-                if (month < date.getMonth()) {
-                    dateDict[date.getMonth()] = []
-                    month = date.getMonth();
+                if (monthYear.getMonth() !== date.getMonth() || monthYear.getFullYear() !== date.getFullYear()) {
+                    dateDict[date.toString()] = []
+                    monthYear = date;
                 }
                 else {
                     // add com
-                    dateDict[month].push(date)
+                    dateDict[monthYear.toString()].push(date)
                 }
             }
         }
@@ -279,5 +279,6 @@ export class Analytics {
         return dateDict;
     }
     // consis: copy above func and use the part that uses flattened list to account for flat chapters, then fill in gaps
+    // change values in dict to shows titles or urls.
 
 }
