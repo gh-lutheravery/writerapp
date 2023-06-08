@@ -213,16 +213,25 @@ export class Analytics {
         
         // func that makes dict based on months for each comment
         let comDict = new Map();
-        let month: number = 0;
+        let monthYear: Date = new Date();
+        let tally = 0;
         for (let com of ascComArray) {
+            // if this is the first iteration
             const date = new Date(com.release);
-            if (month < date.getMonth()) {
-                comDict[date.getMonth()] = []
-                month = date.getMonth();
+            if (tally === 0) {
+                comDict[date.toString()] = [];
+                tally++;
             }
+
             else {
-                // add com
-                comDict[month].push(com)
+                if (monthYear.getMonth() !== date.getMonth() || monthYear.getFullYear() !== date.getFullYear()) {
+                    comDict[date.toString()] = [];
+                    monthYear = date;
+                }
+                else {
+                    // add com
+                    comDict[monthYear.toString()].push(com);
+                }
             }
         }
         
