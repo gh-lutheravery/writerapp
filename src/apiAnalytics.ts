@@ -255,14 +255,23 @@ export class Analytics {
         // func that makes dict based on months for each comment
         let dateDict = new Map();
         let monthYear: Date = new Date();
+        let tally: number = 0;
         for (let date of ascDateArray) {
-            if (month < date.getMonth()) {
-                dateDict[date.getMonth()] = []
-                month = date.getMonth();
+            if (tally === 0) {
+                dateDict[date.toString()] = [];
+                monthYear = date;
+                tally++;
             }
+            
             else {
-                // add com
-                dateDict[month].push(date)
+                if (month < date.getMonth()) {
+                    dateDict[date.getMonth()] = []
+                    month = date.getMonth();
+                }
+                else {
+                    // add com
+                    dateDict[month].push(date)
+                }
             }
         }
         
