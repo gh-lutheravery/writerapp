@@ -220,6 +220,7 @@ export class Analytics {
             const date = new Date(com.release);
             if (tally === 0) {
                 comDict[date.toString()] = [];
+                monthYear = date; 
                 tally++;
             }
 
@@ -253,7 +254,7 @@ export class Analytics {
         
         // func that makes dict based on months for each comment
         let dateDict = new Map();
-        let month: number = 0;
+        let monthYear: Date = new Date();
         for (let date of ascDateArray) {
             if (month < date.getMonth()) {
                 dateDict[date.getMonth()] = []
