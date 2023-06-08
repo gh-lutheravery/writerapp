@@ -5,6 +5,17 @@ import { Chapter, ChapterComment } from '@mh1024/royalroadl-api/dist/services/ch
 import { PopularBlurb } from '@mh1024/royalroadl-api/dist/services/fictions';
 import { getLastPage } from '@mh1024/royalroadl-api/dist/utils';
 
+
+export class ChapterTitleDate {
+    public Title: string;
+    public Date: Date;
+
+    constructor(title: string, date: Date) {
+        this.Title = title;
+        this.Date = date;
+    }
+}
+
 export class GenrePopularity {
     public PopRating: number;
     public readonly Name: string;
