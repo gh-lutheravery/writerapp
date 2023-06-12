@@ -221,7 +221,7 @@ export class Analytics {
 
         // func that sorts comment list asc
         const ascComArray: ChapterComment[] = twoDimComArray.sort();
-        
+
         // func that makes dict based on months for each comment
         let comDict = new Map();
         let monthYear: Date = new Date();
@@ -236,7 +236,10 @@ export class Analytics {
             }
 
             else {
-                if (monthYear.getMonth() !== date.getMonth() || monthYear.getFullYear() !== date.getFullYear()) {
+                // check if the current element in array is a different month
+                if (monthYear.getMonth() !== date.getMonth() || 
+                monthYear.getFullYear() !== date.getFullYear()) {
+
                     comDict[date.toString()] = [];
                     monthYear = date;
                 }
@@ -257,31 +260,38 @@ export class Analytics {
 
         const chapterArray: FictionChapter[] = fict.chapters;
 
-        // func that sorts comment list asc
-        const chapterReleaseArray: number[] = Array.from(chapterArray, ch => ch.release);
-        const chapterDateArray: Date[] = Array.from(chapterReleaseArray, r => new Date(r));
+        let chapterDateArray: ChapterTitleDate[] = []
+        for (let i of chapterArray) {
+            const date: Date = new Date(i.release);
+            const name: string = i.title;
+            chapterDateArray.push(new ChapterTitleDate(name, date));
+        }
 
-        const ascDateArray: FictionChapter[] = chapterDateArray.sort();
+        const ascDateArray: ChapterTitleDate[] = chapterDateArray.sort((a, b) => a.Date.getTime() - b.Date.getTime())
         
         // func that makes dict based on months for each comment
         let dateDict = new Map();
         let monthYear: Date = new Date();
         let tally: number = 0;
-        for (let date of ascDateArray) {
+        for (let cd of ascDateArray) {
+            // if this is the first iteration
             if (tally === 0) {
-                dateDict[date.toString()] = [];
-                monthYear = date;
+                dateDict[cd.Date.toString()] = [];
+                monthYear = cd.Date;
                 tally++;
             }
 
             else {
-                if (monthYear.getMonth() !== date.getMonth() || monthYear.getFullYear() !== date.getFullYear()) {
-                    dateDict[date.toString()] = []
-                    monthYear = date;
+                // check if the current element in array is a different month
+                if (monthYear.getMonth() !== cd.Date.getMonth() || 
+                monthYear.getFullYear() !== cd.Date.getFullYear()) {
+
+                    dateDict[cd.Date.toString()] = []
+                    monthYear = cd.Date;
                 }
                 else {
                     // add com
-                    dateDict[monthYear.toString()].push(date)
+                    dateDict[monthYear.toString()].push(cd.Title)
                 }
             }
         }
