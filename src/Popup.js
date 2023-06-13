@@ -3,10 +3,10 @@ import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
 import squareLogo from '../assets/square-logo.png'
 import { Analytics } from './components/Analytics';
 
-function getPage(){
+function getCurrentUrl(){
     browser.tabs.query({currentWindow: true, active: true})
       .then((tabs) => {
-        console.log(tabs[0].url);
+        return tabs[0].url;
     })
 }
 
