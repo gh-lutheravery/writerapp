@@ -3,6 +3,13 @@ import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
 import squareLogo from '../assets/square-logo.png'
 import { Analytics } from './components/Analytics';
 
+function getPage(){
+    browser.tabs.query({currentWindow: true, active: true})
+      .then((tabs) => {
+        console.log(tabs[0].url);
+    })
+}
+
 export class Popup extends Component {
     static displayName = Popup.name;
 
