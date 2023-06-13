@@ -24,7 +24,7 @@ export function Analytics() {
             <div>
                 <div style={{ width: "100%" }}>
                     <h1 style={{ margin: "auto", width: "fit-content" }}>*Story* Analytics</h1>
-                </div>
+                </div>bn  
 
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList>

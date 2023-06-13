@@ -7,7 +7,8 @@
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
 
   "browser_action": {
