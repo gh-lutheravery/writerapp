@@ -6,8 +6,9 @@ import { Analytics } from './components/Analytics';
 function getCurrentUrl(){
     browser.tabs.query({currentWindow: true, active: true})
       .then((tabs) => {
-        return tabs[0].url;
+        const url = tabs[0].url;
     })
+    return url
 }
 
 export class Popup extends Component {
@@ -41,7 +42,7 @@ export class Popup extends Component {
                     </CardHeader>
 
                     <div id="popup-btn-group">
-                        <Button onClick={<Analytics/>}>
+                        <Button onClick={<Analytics fictionUrl={getCurrentUrl()}/>}>
                             Analyze this story
                         </Button>
                     </div>
