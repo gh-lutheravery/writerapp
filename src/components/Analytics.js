@@ -16,9 +16,9 @@ function analyzeCallback() {
     /*call func to populate obj*/
 }
 
-export function Analytics() {
+export function Analytics(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
-
+    
     return (
         <div>
             <div>
@@ -35,16 +35,16 @@ export function Analytics() {
                     </TabList>
 
                     <TabPanel>
-                        <Time />
+                        <Time url={fictionUrl}/>
                     </TabPanel>
                     <TabPanel>
-                        <SocialMedia />
+                        <SocialMedia url={fictionUrl} />
                     </TabPanel>
                     <TabPanel>
-                        <Genre />
+                        <Genre url={fictionUrl} />
                     </TabPanel>
                     <TabPanel>
-                        <Consistency />
+                        <Consistency url={fictionUrl} />
                     </TabPanel>
                 </Tabs>
             </div>
