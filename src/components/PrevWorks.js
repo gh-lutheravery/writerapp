@@ -5,6 +5,7 @@ import { AreaChart, CartesianGrid, XAxis,
 import { getPrevWorksAnalytics } from '../apiAnalytics'
 
 export function PrevWorks(url) {
+    // add check for no prev works
     const prevWorksDict = getPrevWorksAnalytics(url);
     const renderPrevWorks = (works) => {
         {works.forEach(value, key, map => {

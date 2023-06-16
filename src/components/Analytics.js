@@ -1,7 +1,7 @@
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css';
 import { Time } from './Time';
-import { SocialMedia } from './SocialMedia';
+import { PrevWorks } from './PrevWorks';
 import { Genre } from './Genre';
 import { Consistency } from './Consistency';
 import { useState } from 'react';
@@ -38,8 +38,7 @@ export function Analytics(fictionUrl) {
                         <Time url={fictionUrl}/>
                     </TabPanel>
                     <TabPanel>
-                        // change below to prevworks
-                        <SocialMedia url={fictionUrl} />
+                        <PrevWorks url={fictionUrl} />
                     </TabPanel>
                     <TabPanel>
                         <Genre url={fictionUrl} />
