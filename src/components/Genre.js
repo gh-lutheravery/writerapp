@@ -1,14 +1,27 @@
 import { Popularity } from './Popularity';
 import {ListGroup, ListGroupItem, Badge} from 'reactstrap'
+import { getGenreAnalytics } from '../apiAnalytics'
 
-export function Genre() {
+export function Genre(url) {
+    const genreArray = getGenreAnalytics(url);
     const renderGenres = (genres) => {
         {genres.map(genre => {
+            if (genre.IsMatch === true) {
+                return (
+                    <ListGroupItem className="justify-content-between" active>
+                        {genre.Name}{' '}
+                        <Badge>
+                            {genre.PopRating}
+                        </Badge>
+                    </ListGroupItem>
+                )
+            }
+
             return (
                 <ListGroupItem className="justify-content-between">
-                    {genre.name}{' '}
+                    {genre.Name}{' '}
                     <Badge>
-                        {genre.numStat}
+                        {genre.PopRating}
                     </Badge>
                 </ListGroupItem>
             )
@@ -23,7 +36,7 @@ export function Genre() {
                 </div>
                 
                 <ListGroup> 
-                    {/*props.renderGenres()*/}
+                    {props.renderGenres(genreArray)}
                 </ListGroup>
             </div>
         </div>
