@@ -24,7 +24,7 @@ export function PrevWorks(url) {
     return (
         <div>
             <div style={{ marginBottom: "1rem"}}>
-                <h2>Mentions on other websites since release</h2>
+                <h2>All other stories done by this author</h2>
             </div>
 
             <ListGroup>
