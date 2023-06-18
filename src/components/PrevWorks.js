@@ -29,7 +29,7 @@ export function PrevWorks(url) {
             </div>
 
             <ListGroup>
-                {props.renderSites(prevWorksDict)}
+                {renderPrevWorks(prevWorksDict)}
             </ListGroup>
         </div>
     );
