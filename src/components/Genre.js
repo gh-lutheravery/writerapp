@@ -36,7 +36,7 @@ export function Genre(url) {
                 </div>
                 
                 <ListGroup> 
-                    {props.renderGenres(genreArray)}
+                    {renderGenres(genreArray)}
                 </ListGroup>
             </div>
         </div>
