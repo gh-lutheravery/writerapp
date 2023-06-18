@@ -19,7 +19,7 @@ export function Analytics(fictionUrl) {
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList>
                         <Tab>Time</Tab>
-                        <Tab>Social Media</Tab>
+                        <Tab>Previous Works</Tab>
                         <Tab>Genre</Tab>
                         <Tab>Consistency</Tab>
                     </TabList>
