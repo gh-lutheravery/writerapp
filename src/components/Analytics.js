@@ -6,16 +6,6 @@ import { Genre } from './Genre';
 import { Consistency } from './Consistency';
 import { useState } from 'react';
 
-// use redux for these components to manage state being passed into the levels 
-// of smaller components easier
-
-function analyzeCallback() {
-    /*new promise*/
-    /*function that calls api*/
-    /*get json*/
-    /*call func to populate obj*/
-}
-
 export function Analytics(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
     
