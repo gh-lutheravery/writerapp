@@ -5,16 +5,22 @@ import { PrevWorks } from './PrevWorks';
 import { Genre } from './Genre';
 import { Consistency } from './Consistency';
 import { useState } from 'react';
+import { getFiction } from '../apiAnalytics'
 
 export function Analytics(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
+
+    const getTitle = (url) => {
+        const fict = getFiction(url);
+        return fict.title;
+    };
     
     return (
         <div>
             <div>
                 <div style={{ width: "100%" }}>
-                    <h1 style={{ margin: "auto", width: "fit-content" }}>*Story* Analytics</h1>
-                </div>bn  
+                    <h1 style={{ margin: "auto", width: "fit-content" }}>{getTitle(fictionUrl)} Analytics</h1>
+                </div>
 
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList>
