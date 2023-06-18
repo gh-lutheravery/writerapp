@@ -1,8 +1,9 @@
 import { AreaChart, CartesianGrid, XAxis, 
         YAxis, Tooltip, Legend, Area, ResponsiveContainer } from 'recharts'
+import { getConsistencyAnalytics } from '../apiAnalytics'
 
 export function Consistency() {
-  const consistencyMap = getPopularityAnalytics(url);
+  const consistencyMap = getConsistencyAnalytics(url);
   const consistencyChartData = []
   consistencyMap.forEach(value, key, map => {
       object = {
