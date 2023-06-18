@@ -76,7 +76,7 @@ export class Analytics {
         return id;
     }
 
-    private async getFiction(url: string) {
+    public async getFiction(url: string) {
         const id: number = this.getId(url);
         const fict: Fiction = this.api.fiction.getFiction(id);
         return fict;
