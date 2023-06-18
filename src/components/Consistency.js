@@ -2,15 +2,15 @@ import { AreaChart, CartesianGrid, XAxis,
         YAxis, Tooltip, Legend, Area, ResponsiveContainer } from 'recharts'
 
 export function Consistency() {
-  const popularityMap = getPopularityAnalytics(url);
-  const popularityChartData = []
-  popularityMap.forEach(value, key, map => {
+  const consistencyMap = getPopularityAnalytics(url);
+  const consistencyChartData = []
+  consistencyMap.forEach(value, key, map => {
       object = {
         name: key,
         comments: value.length,
         chapterArray: value
       }
-      popularityChartData.push(object);
+      consistencyChartData.push(object);
   });
 
   const getIntroOfPage = (titleArray) => {
@@ -38,7 +38,7 @@ export function Consistency() {
           </div>
           
           <ResponsiveContainer width="100%" height={450}>
-              <AreaChart width={1030} height={450} data={data}
+              <AreaChart width={1030} height={450} data={consistencyChartData}
               margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                   <defs>
                       <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
