@@ -16,7 +16,7 @@ export function PrevWorks(url) {
                     Posts: {value.TimeStamp}
                 </Badge>
                 <Badge>
-                    Total Likes: {value.Followers}
+                    Total Followers: {value.Followers}
                 </Badge>
             </ListGroupItem>
         )})}
