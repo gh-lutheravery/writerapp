@@ -8,7 +8,8 @@
 
   "permissions": [
     "activeTab",
-    "tabs"
+    "tabs",
+    "storage"
   ],
 
   "browser_action": {
@@ -25,7 +26,10 @@
   "options_ui": {
     "page": "src/pages/home.html",
     "browser_style": true
+  },
+
+  "background": {
+    "service_worker": "background.js"
   }
-  
   
 }
