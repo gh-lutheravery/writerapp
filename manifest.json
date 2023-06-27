@@ -27,11 +27,6 @@
     }
   ],
 
-  "options_ui": {
-    "page": "src/pages/home.html",
-    "browser_style": true
-  },
-
   "background": {
     "service_worker": "background.js"
   }
