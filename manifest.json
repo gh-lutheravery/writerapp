@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Writerapp",
   "version": "1.0",
 
@@ -12,15 +12,19 @@
     "storage"
   ],
 
-  "browser_action": {
+  "action": {
     "default_title": "Writerapp",
     "default_icon": "src/assets/square-logo.png",
     "default_popup": "src/pages/popup.html"
   },
 
   "web_accessible_resources": [
-    "src/assets/square-logo.png",
-    "src/assets/wa-logo.png"
+    {
+      "resources": ["src/assets/square-logo.png"]
+    }, 
+    {
+      "resources": ["src/assets/wa-logo.png"]
+    }
   ],
 
   "options_ui": {
