@@ -2,6 +2,7 @@
 import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
 import squareLogo from '../assets/square-logo.png'
 import { Analytics } from './components/Analytics';
+import { extpay } from './background'
 
 function getCurrentUrl(){
     browser.tabs.query({currentWindow: true, active: true})
@@ -34,8 +35,8 @@ export class Popup extends Component {
 
                             </div>
                             <div id="popup-home">
-                                <Button onClick={browser.runtime.openOptionsPage()}>
-                                    Home
+                                <Button onClick={extpay.openPaymentPage()}>
+                                    Upgrade
                                 </Button>
                             </div>
                         </div>
