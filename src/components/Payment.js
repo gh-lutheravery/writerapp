@@ -1,73 +1,39 @@
-﻿import React, { Component } from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import React, { Component } from 'react';
+import { Roadmap } from './Roadmap';
 
-import '../custom.css'
+export class Home extends Component {
+  static displayName = Home.name;
 
-export class Payment extends Component {
-    static displayName = Payment.name;
+  render () {
+    return (
+      <div>
+        <h1>Payment</h1>
 
-    render() {
-        return (
-            <div id="auth-container">
-                <Form>
-                    <h2>Payment</h2>
-                    <FormGroup>
-                        <Label for="exampleAddress">
-                            Card Number
-                        </Label>
-                        <Input
-                            id="exampleAddress"
-                            name="address"
-                            placeholder="1234 Main St"
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleAddress2">
-                            Address
-                        </Label>
-                        <Input
-                            id="exampleAddress2"
-                            name="address2"
-                            placeholder="Apartment, studio, or floor"
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleCity">
-                            City
-                        </Label>
-                        <Input
-                            id="exampleCity"
-                            name="city"
-                        />
-                    </FormGroup>
-                    
-                    <FormGroup>
-                        <Label for="exampleState">
-                            State
-                        </Label>
-                        <Input
-                            id="exampleState"
-                            name="state"
-                        />
-                    </FormGroup>
-                    <FormGroup check>
-                        <Input
-                            id="exampleCheck"
-                            name="check"
-                            type="checkbox"
-                        />
-                        <Label
-                            check
-                            for="exampleCheck"
-                        >
-                            Check me out
-                        </Label>
-                    </FormGroup>
-                    <Button id="auth-btn">
-                        Sign in
-                    </Button>
-                </Form>
-            </div>
-        );
-    }
+        <div>
+          <h2>Free</h2>
+          <p>The free tier of writerapp currently includes:</p>
+          <ul>
+            <li>Check the previous works of an author</li>
+            <li>Analyze the current top 5 genres of Royal Road and see if the selected fiction matches them</li>
+            <li>Observe a detailed graph representing the consistency of the selected fiction</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Plus</h2>
+          <p>The plus tier of writerapp currently includes:</p>
+          <ul>
+            <li>See a detailed graph of how many readers engaged to a fiction overtime (using comments in each chapter)</li>
+          </ul>
+          <div id="popup-home">
+              <Button onClick={extpay.openPaymentPage()}>
+                  Pay
+              </Button>
+          </div>
+        </div>
+        
+        <a href="#" id="home-link">Click here to see what tier of Writerapp you currently have.</a>
+      </div>
+    );
+  }
 }
