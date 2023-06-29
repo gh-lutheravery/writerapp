@@ -8,7 +8,7 @@ export class Home extends Component {
     return (
       <div>
         <h1>Payment</h1>
-
+        <p>Click the Pay button for the tier you bought to see info on your subscription.</p>
         <Card
           className="my-2"
           style={{
