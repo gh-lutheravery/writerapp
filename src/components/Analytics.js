@@ -6,6 +6,7 @@ import { Genre } from './Genre';
 import { Consistency } from './Consistency';
 import { useState } from 'react';
 import { getFiction } from '../apiAnalytics'
+import user from '../background'
 
 export function Analytics(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
@@ -24,7 +25,10 @@ export function Analytics(fictionUrl) {
 
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList>
-                        <Tab>Time</Tab>
+                        {
+                            user.paid ? <Tab>Time</Tab>
+                            : <Tab disabled>Time</Tab>
+                        }
                         <Tab>Previous Works</Tab>
                         <Tab>Genre</Tab>
                         <Tab>Consistency</Tab>
