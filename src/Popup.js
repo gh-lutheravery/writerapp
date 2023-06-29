@@ -39,6 +39,11 @@ export class Popup extends Component {
                                     Upgrade
                                 </Button>
                             </div>
+                            <div id="popup-home" title="Login if you paid for a subscription">
+                                <Button onClick={extpay.openLoginPage()}>
+                                    Login
+                                </Button>
+                            </div>
                         </div>
                     </CardHeader>
 
