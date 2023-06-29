@@ -6,7 +6,7 @@ import { Genre } from './Genre';
 import { Consistency } from './Consistency';
 import { useState } from 'react';
 import { getFiction } from '../apiAnalytics'
-import user from '../background'
+import { user } from '../background'
 
 export function Analytics(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
@@ -23,7 +23,7 @@ export function Analytics(fictionUrl) {
                     <h1 style={{ margin: "auto", width: "fit-content" }}>{getTitle(fictionUrl)} Analytics</h1>
                     {
                         user.paid ? <h3 style={{ margin: "auto", width: "fit-content" }}>Paid Writerapp</h3>
-                        
+
                         : <h3 style={{ margin: "auto", width: "fit-content" }}>Free Writerapp</h3>
                     }
                 </div>

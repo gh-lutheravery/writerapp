@@ -8,4 +8,4 @@ let user = await extpay.getUser().then(user => {
     return user
 })
 
-export default user;
+export {extpay, user};
