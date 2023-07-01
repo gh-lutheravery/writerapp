@@ -1,9 +1,9 @@
 import { AreaChart, CartesianGrid, XAxis, 
         YAxis, Tooltip, Legend, Area, ResponsiveContainer } from 'recharts'
-import { getPopularityAnalytics } from '../apiAnalytics.ts'
+import { Analytics } from '../apiAnalytics.ts'
 
 export function Popularity(url) { 
-    const popularityMap = getPopularityAnalytics(url);
+    const popularityMap = Analytics.getPopularityAnalytics(url);
     const popularityChartData = []
     popularityMap.forEach(value, key, map => {
       object = {

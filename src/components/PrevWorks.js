@@ -1,11 +1,11 @@
 import {ListGroup, ListGroupItem, Badge} from 'reactstrap'
 import { AreaChart, CartesianGrid, XAxis, 
     YAxis, Tooltip, Legend, Area, ResponsiveContainer } from 'recharts'
-import { getPrevWorksAnalytics } from '../apiAnalytics.ts'
+import { Analytics } from '../apiAnalytics.ts'
 
 export function PrevWorks(url) {
     // add check for no prev works
-    const prevWorksDict = getPrevWorksAnalytics(url);
+    const prevWorksDict = Analytics.getPrevWorksAnalytics(url);
     const renderPrevWorks = (works) => {
         {works.forEach(value, key, map => {
           return (

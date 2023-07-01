@@ -1,8 +1,8 @@
 import {ListGroup, ListGroupItem, Badge} from 'reactstrap'
-import { getGenreAnalytics } from '../apiAnalytics.ts'
+import { Analytics } from '../apiAnalytics.ts'
 
 export function Genre(url) {
-    const genreArray = getGenreAnalytics(url);
+    const genreArray = Analytics.getGenreAnalytics(url);
     const renderGenres = (genres) => {
         {genres.map(genre => {
             if (genre.IsMatch === true) {
