@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
 import squareLogo from './assets/square-logo.png'
-import { Analytics } from './components/Analytics.js';
+import { AnalyticsView } from './components/AnalyticsView.js';
 import { extpay } from './background.js'
 
 function getCurrentUrl(){
@@ -48,7 +48,7 @@ export class Popup extends Component {
                     </CardHeader>
 
                     <div id="popup-btn-group">
-                        <Button onClick={<Analytics fictionUrl={getCurrentUrl()}/>}>
+                        <Button onClick={<AnalyticsView fictionUrl={getCurrentUrl()}/>}>
                             Analyze this story
                         </Button>
                     </div>

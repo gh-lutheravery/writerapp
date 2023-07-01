@@ -5,14 +5,14 @@ import { PrevWorks } from './PrevWorks.js';
 import { Genre } from './Genre.js';
 import { Consistency } from './Consistency.js';
 import { useState } from 'react';
-import { getFiction } from '../apiAnalytics.ts'
+import { Analytics } from '../apiAnalytics.js'
 import { user } from '../background.js'
 
-export function Analytics(fictionUrl) {
+export function AnalyticsView(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
 
     const getTitle = (url) => {
-        const fict = getFiction(url);
+        const fict = Analytics.getFiction(url);
         return fict.title;
     };
     
