@@ -42,11 +42,12 @@ module.exports = {
         }),
         new HtmlPlugin({
             title: "Writerapp",
-            filename: "popup.html"
+            filename: "popup.html",
+            chunks: ["Popup"]
         })
     ],
 
     output: {
-        filename: "index.js"
+        filename: '[name].js'
     }
 }
