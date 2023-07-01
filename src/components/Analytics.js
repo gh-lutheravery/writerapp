@@ -1,12 +1,12 @@
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css';
-import { Time } from './Time';
-import { PrevWorks } from './PrevWorks';
-import { Genre } from './Genre';
-import { Consistency } from './Consistency';
+import { Time } from './Time.js';
+import { PrevWorks } from './PrevWorks.js';
+import { Genre } from './Genre.js';
+import { Consistency } from './Consistency.js';
 import { useState } from 'react';
-import { getFiction } from '../apiAnalytics'
-import { user } from '../background'
+import { getFiction } from '../apiAnalytics.js'
+import { user } from '../background.js'
 
 export function Analytics(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
