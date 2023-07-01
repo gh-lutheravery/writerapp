@@ -2,7 +2,7 @@ import { Popularity } from './Popularity';
 import {ListGroup, ListGroupItem, Badge} from 'reactstrap'
 import { AreaChart, CartesianGrid, XAxis, 
     YAxis, Tooltip, Legend, Area, ResponsiveContainer } from 'recharts'
-import { getPrevWorksAnalytics } from '../apiAnalytics'
+import { getPrevWorksAnalytics } from '../apiAnalytics.js'
 
 export function PrevWorks(url) {
     // add check for no prev works

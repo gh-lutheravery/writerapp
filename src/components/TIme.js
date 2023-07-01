@@ -1,4 +1,4 @@
-import { Popularity } from './Popularity';
+import { Popularity } from './Popularity.js';
 
 export function Time() {
     return (
