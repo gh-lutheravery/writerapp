@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
-import squareLogo from '../assets/square-logo.png'
+import squareLogo from './assets/square-logo.png'
 import { Analytics } from './components/Analytics.js';
 import { extpay } from './background.js'
 
