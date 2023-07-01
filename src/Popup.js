@@ -1,8 +1,8 @@
 ﻿import React, { Component } from 'react';
 import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
 import squareLogo from '../assets/square-logo.png'
-import { Analytics } from './components/Analytics';
-import { extpay } from './background'
+import { Analytics } from './components/Analytics.js';
+import { extpay } from './background.js'
 
 function getCurrentUrl(){
     browser.tabs.query({currentWindow: true, active: true})
