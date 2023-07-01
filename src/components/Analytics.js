@@ -5,7 +5,7 @@ import { PrevWorks } from './PrevWorks.js';
 import { Genre } from './Genre.js';
 import { Consistency } from './Consistency.js';
 import { useState } from 'react';
-import { getFiction } from '../apiAnalytics.js'
+import { getFiction } from '../apiAnalytics.ts'
 import { user } from '../background.js'
 
 export function Analytics(fictionUrl) {

@@ -1,6 +1,6 @@
 import { AreaChart, CartesianGrid, XAxis, 
         YAxis, Tooltip, Legend, Area, ResponsiveContainer } from 'recharts'
-import { getPopularityAnalytics } from '../apiAnalytics.js'
+import { getPopularityAnalytics } from '../apiAnalytics.ts'
 
 export function Popularity(url) { 
     const popularityMap = getPopularityAnalytics(url);

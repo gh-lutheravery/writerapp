@@ -1,5 +1,5 @@
 import {ListGroup, ListGroupItem, Badge} from 'reactstrap'
-import { getGenreAnalytics } from '../apiAnalytics.js'
+import { getGenreAnalytics } from '../apiAnalytics.ts'
 
 export function Genre(url) {
     const genreArray = getGenreAnalytics(url);
