@@ -6,7 +6,7 @@ import { Genre } from './Genre.js';
 import { Consistency } from './Consistency.js';
 import { useState } from 'react';
 import { Analytics } from '../apiAnalytics.ts'
-import { user } from '../background.js'
+import { GLOBALUSER } from '../background.js'
 
 export function AnalyticsView(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
@@ -22,7 +22,7 @@ export function AnalyticsView(fictionUrl) {
                 <div style={{ width: "100%" }}>
                     <h1 style={{ margin: "auto", width: "fit-content" }}>{getTitle(fictionUrl)} Analytics</h1>
                     {
-                        user.paid ? <h3 style={{ margin: "auto", width: "fit-content" }}>Paid Writerapp</h3>
+                        GLOBALUSER.paid ? <h3 style={{ margin: "auto", width: "fit-content" }}>Paid Writerapp</h3>
 
                         : <h3 style={{ margin: "auto", width: "fit-content" }}>Free Writerapp</h3>
                     }
@@ -31,7 +31,7 @@ export function AnalyticsView(fictionUrl) {
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList>
                         {
-                            user.paid ? <Tab>Time</Tab>
+                            GLOBALUSER.paid ? <Tab>Time</Tab>
                             : <Tab disabled>Time</Tab>
                         }
                         <Tab>Previous Works</Tab>

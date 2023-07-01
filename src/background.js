@@ -4,11 +4,10 @@ const extpay = ExtPay('writerapp-plus');
 
 extpay.startBackground();
 
-(async () => {
-    let user = await extpay.getUser().then(user => {
-        return user
-    })
+var GLOBALUSER;
+
+extpay.getUser().then(user => {
+    GLOBALUSER = user;
 })
 
-
-export {extpay, user};
+export {extpay, GLOBALUSER};
