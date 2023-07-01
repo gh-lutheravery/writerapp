@@ -192,15 +192,6 @@ export class Analytics {
         // func that loops through chapter array and gets real chapter list
         let twoDimComArray: [ChapterComment[]] = [[]];
         let page: number = 0;
-
-        /*
-        const req = this.api.Requester;
-        const baseUrl = trimmedUrl.slice(0, 24);+
-        const htmlPage = await this.req.get(
-            `/fiction/0/_/chapter/${String(ch.id)}/_`,
-        );
-        const lastPage: number = getLastPage(htmlPage);
-        */
         
         // func that loops through list and stores comment arrays
         fict.chapters.forEach((ch: Chapter) => {
@@ -299,7 +290,5 @@ export class Analytics {
         // put result in obj
         return dateDict;
     }
-    // consis: copy above func and use the part that uses flattened list to account for flat chapters, then fill in gaps
-    // change values in dict to shows titles or urls.
 
 }
