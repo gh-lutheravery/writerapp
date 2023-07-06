@@ -35,6 +35,8 @@ export function Popup() {
     return (
         <div>
             <Card id="popup-container">
+                <a id="hide-btn" href="#" onclick={onClick}>Hide</a>
+                { showResults ? <failedPaymentNotice /> : null }
                 <CardHeader>
                     <div id="popup-header-container">
                         <div id="popup-title-container">
