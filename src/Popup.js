@@ -28,6 +28,9 @@ const failedPaymentNotice = () => (
 
 export function Popup() {
     const displayName = Popup.name;
+    const [showResults, setShowResults] = React.useState(false)
+
+    const onClick = () => setShowResults(true)
 
     return (
         <div>
