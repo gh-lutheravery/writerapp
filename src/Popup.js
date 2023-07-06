@@ -12,48 +12,52 @@ function getCurrentUrl(){
     return url
 }
 
-export class Popup extends Component {
-    static displayName = Popup.name;
+function hideText(text, btn) {
+    // hide the payment failure text
+    document.getElementById(text).style.display = 'none';
+    btn.style.display = 'none';
+}
 
-    render() {
-        return (
-            <div>
-                <Card id="popup-container">
-                    
-                    <CardHeader>
-                        <div id="popup-header-container">
-                            <div id="popup-title-container">
-                                <CardImg
-                                    alt="cool logo icon"
-                                    src={squareLogo}
-                                    display="span"
-                                    id="popup-icon"
-                                />
-                                <CardTitle tag="h5" id="popup-title">
-                                    Writerapp
-                                </CardTitle>
+export function Popup() {
+    const displayName = Popup.name;
 
-                            </div>
-                            <div id="popup-home">
-                                <Button onClick={extpay.openPaymentPage()}>
-                                    Upgrade
-                                </Button>
-                            </div>
-                            <div id="popup-home" title="Login if you paid for a subscription">
-                                <Button onClick={extpay.openLoginPage()}>
-                                    Login
-                                </Button>
-                            </div>
+    return (
+        <div>
+            <Card id="popup-container">
+                <CardHeader>
+                    <div id="popup-header-container">
+                        <div id="popup-title-container">
+                            <CardImg
+                                alt="cool logo icon"
+                                src={squareLogo}
+                                display="span"
+                                id="popup-icon"
+                            />
+                            <CardTitle tag="h5" id="popup-title">
+                                Writerapp
+                            </CardTitle>
+
                         </div>
-                    </CardHeader>
-
-                    <div id="popup-btn-group">
-                        <Button onClick={<AnalyticsView fictionUrl={getCurrentUrl()}/>}>
-                            Analyze this story
-                        </Button>
+                        <div id="popup-home">
+                            <Button onClick={extpay.openPaymentPage()}>
+                                Upgrade
+                            </Button>
+                        </div>
+                        <div id="popup-home" title="Login if you paid for a subscription">
+                            <Button onClick={extpay.openLoginPage()}>
+                                Login
+                            </Button>
+                        </div>
                     </div>
-                </Card>
-            </div>
-        );
-    }
+                </CardHeader>
+
+                <div id="popup-btn-group">
+                    <Button onClick={<AnalyticsView fictionUrl={getCurrentUrl()}/>}>
+                        Analyze this story
+                    </Button>
+                </div>
+            </Card>
+        </div>
+    );
+    
 }
