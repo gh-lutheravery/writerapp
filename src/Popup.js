@@ -18,6 +18,14 @@ function hideText(text, btn) {
     btn.style.display = 'none';
 }
 
+const failedPaymentNotice = () => (
+    <div style={{ margin: "auto", width: "fit-content" }}>
+        <p style={{ color: "red" }} className={props.shouldHide? 'hidden' : undefined}>Your subscription payment has failed to process correctly. The upgrade page can update 
+            your card information.
+        </p>
+    </div>
+)
+
 export function Popup() {
     const displayName = Popup.name;
 
