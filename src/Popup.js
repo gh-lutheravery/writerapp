@@ -1,5 +1,5 @@
-﻿import React, { Component } from 'react';
-import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
+﻿import React, { Component } from './node_modules/react';
+import { Card, CardImg, CardTitle, Button, CardHeader } from './node_modules/reactstrap';
 import squareLogo from './assets/square-logo.png'
 import { AnalyticsView } from './components/AnalyticsView.js';
 import { extpay } from './background.js'

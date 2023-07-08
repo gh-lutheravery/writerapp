@@ -1,6 +1,6 @@
-import {ListGroup, ListGroupItem, Badge} from 'reactstrap'
+import {ListGroup, ListGroupItem, Badge} from './node_modules/reactstrap'
 import { AreaChart, CartesianGrid, XAxis, 
-    YAxis, Tooltip, Legend, Area, ResponsiveContainer } from 'recharts'
+    YAxis, Tooltip, Legend, Area, ResponsiveContainer } from './node_modules/recharts'
 import { Analytics } from '../apiAnalytics.ts'
 
 export function PrevWorks(url) {

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { Component } from './node_modules/react';
+import { Route, Routes } from './node_modules/react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';

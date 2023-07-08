@@ -1,4 +1,4 @@
-import {ListGroup, ListGroupItem, Badge} from 'reactstrap'
+import {ListGroup, ListGroupItem, Badge} from './node_modules/reactstrap'
 import { Analytics } from '../apiAnalytics.ts'
 
 export function Genre(url) {
