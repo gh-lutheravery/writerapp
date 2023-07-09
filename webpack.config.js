@@ -6,7 +6,10 @@ const path = require("path")
 module.exports = {
     mode: "development",
     devtool: "cheap-module-source-map",
-    entry: "./src/index.js",
+    entry: {
+        popup: path.resolve('src/index.js'),
+        background: path.resolve('background.js'),
+    },
     module: {
         rules: [
             {
@@ -43,7 +46,7 @@ module.exports = {
         new HtmlPlugin({
             title: "Writerapp",
             filename: "popup.html",
-            chunks: ["Popup"]
+            chunks: ["popup"]
         })
     ],
 
