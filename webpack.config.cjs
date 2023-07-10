@@ -3,6 +3,8 @@ const HtmlPlugin = require("html-webpack-plugin")
 const path = require("path")
 
 
+
+
 module.exports = {
     mode: "development",
     devtool: "cheap-module-source-map",
@@ -14,6 +16,11 @@ module.exports = {
                 test: /\.js?$/i,
                 exclude: "/node_modules/",
                 options: { presets: ['@babel/preset-env','@babel/preset-react'] },
+            },
+            {
+                use: 'ts-loader',
+                test: /\.ts?$/,
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/i,
