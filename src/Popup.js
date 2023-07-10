@@ -2,7 +2,7 @@
 import { Card, CardImg, CardTitle, Button, CardHeader } from 'reactstrap';
 import squareLogo from './assets/square-logo.png'
 import { AnalyticsView } from './components/AnalyticsView.js';
-import { extpay } from './background.js'
+import { extpay } from '../background.js'
 
 function getCurrentUrl(){
     browser.tabs.query({currentWindow: true, active: true})
