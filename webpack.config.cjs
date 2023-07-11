@@ -18,8 +18,8 @@ module.exports = {
                 options: { presets: ['@babel/preset-env','@babel/preset-react'] },
             },
             {
-                use: 'ts-loader',
-                test: /\.ts?$/,
+                loader: 'ts-loader',
+                test: /\.ts?$/i,
                 exclude: /node_modules/,
             },
             {
