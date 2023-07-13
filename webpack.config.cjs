@@ -18,9 +18,8 @@ module.exports = {
                 options: { presets: ['@babel/preset-env','@babel/preset-react'] },
             },
             {
-                loader: 'ts-loader',
-                test: /\.ts?$/i,
-                exclude: /node_modules/,
+                test: /\.ts?/,
+                use: [{loader: 'ts-loader', options: {onlyCompileBundledFiles: true}}],
             },
             {
                 test: /\.css$/i,
