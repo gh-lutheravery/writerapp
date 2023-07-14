@@ -6,7 +6,7 @@ import { Genre } from './Genre.js';
 import { Consistency } from './Consistency.js';
 import { useState } from './node_modules/react';
 import { Analytics } from '../apiAnalytics.ts'
-import { GLOBALUSER } from '../background.js'
+import { GLOBALUSER } from '../../background.js'
 
 export function AnalyticsView(fictionUrl) {
     const [tabIndex, setTabIndex] = useState(0);
