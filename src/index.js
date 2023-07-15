@@ -1,6 +1,6 @@
-import Reactfrom 'react';
-import ReactDOMfrom 'react-dom';
-import { BrowserRouter }from 'react-router-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker.js';
 import './bootstrap.css'
 import { Popup } from './Popup.js';
