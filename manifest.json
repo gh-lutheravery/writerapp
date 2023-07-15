@@ -14,8 +14,8 @@
 
   "action": {
     "default_title": "Writerapp",
-    "default_icon": "src/assets/square-logo.png",
-    "default_popup": "src/pages/popup.html"
+    "default_icon": "square-logo.png",
+    "default_popup": "popup.html"
   },
 
   "background": {
