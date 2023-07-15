@@ -1,10 +1,10 @@
-import { Tabs, TabList, TabPanel, Tab } from './node_modules/react-tabs'
+import { Tabs, TabList, TabPanel, Tab }from 'react-tabs'
 import 'react-tabs/style/react-tabs.css';
 import { Time } from './Time.js';
 import { PrevWorks } from './PrevWorks.js';
 import { Genre } from './Genre.js';
 import { Consistency } from './Consistency.js';
-import { useState } from './node_modules/react';
+import { useState }from 'react';
 import { Analytics } from '../apiAnalytics.ts'
 import { GLOBALUSER } from '../../background.js'
 

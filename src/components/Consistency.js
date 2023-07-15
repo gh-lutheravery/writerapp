@@ -1,5 +1,5 @@
 import { AreaChart, CartesianGrid, XAxis, 
-        YAxis, Tooltip, Legend, Area, ResponsiveContainer } from './node_modules/recharts'
+        YAxis, Tooltip, Legend, Area, ResponsiveContainer }from 'recharts'
 import { Analytics } from '../apiAnalytics.ts'
 
 export function Consistency() {
