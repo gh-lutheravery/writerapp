@@ -4,14 +4,17 @@ import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker.js';
 import './bootstrap.css'
 import { Popup } from './Popup.js';
+import { createRoot } from 'react-dom/client';
+
 
 const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
 
-ReactDOM.render(
+root.render(
   <BrowserRouter>
     <Popup />
-  </BrowserRouter>,
-  rootElement);
+  </BrowserRouter>
+);
 
 registerServiceWorker();
 
