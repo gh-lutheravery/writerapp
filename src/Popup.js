@@ -5,9 +5,9 @@ import { AnalyticsView } from './components/AnalyticsView.js';
 import { extpay } from '../background.js'
 
 function getCurrentUrl(){
-    browser.tabs.query({currentWindow: true, active: true})
-      .then((tabs) => {
-        const url = tabs[0].url;
+    chrome.tabs.query({currentWindow: true, active: true})
+    .then((tabs) => {
+      const url = tabs[0].url;
     })
     return url
 }
