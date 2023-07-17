@@ -54,12 +54,12 @@ export function Popup() {
 
                         </div>
                         <div id="popup-home">
-                            <Button onClick={extpay.openPaymentPage()}>
+                            <Button onClick={extpay.openPaymentPage}>
                                 Upgrade
                             </Button>
                         </div>
                         <div id="popup-home" title="Login if you paid for a subscription">
-                            <Button onClick={extpay.openLoginPage()}>
+                            <Button onClick={extpay.openLoginPage}>
                                 Login
                             </Button>
                         </div>
