@@ -12,7 +12,7 @@ function getCurrentUrl(){
     })
     return url
 }
-
+/*
 function hideText(text, btn) {
     // hide the payment failure text
     document.getElementById(text).style.display = 'none';
@@ -28,18 +28,21 @@ const failedPaymentNotice = () => {
         </div>
     )
 }
-
+*/
 export function Popup() {
     const displayName = Popup.name;
+    /*
     const [showResults, setShowResults] = React.useState(false)
 
     const onClick = () => setShowResults(true)
-
+    */
     return (
         <div>
             <Card id="popup-container">
+                {/*
                 <a id="hide-btn" href="#" onclick={onClick}>Hide</a>
                 { showResults ? <failedPaymentNotice /> : null }
+                */}
                 <CardHeader>
                     <div id="popup-header-container">
                         <div id="popup-title-container">
