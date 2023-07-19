@@ -83,9 +83,16 @@ export function Popup() {
                 </CardHeader>
 
                 <div id="popup-btn-group">
-                    <Button onClick={<AnalyticsView fictionUrl={getCurrentUrl()}/>}>
-                        Analyze this story
-                    </Button>
+                    { 
+                        isValidUrl(getCurrentUrl()) ? 
+                        <Button onClick={<AnalyticsView fictionUrl={getCurrentUrl()}/>}>
+                            Analyze this Royal Road story
+                        </Button> :
+
+                        <Button disabled>
+                            Analyze this Royal Road story
+                        </Button> 
+                    }
                 </div>
             </Card>
         </div>
