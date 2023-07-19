@@ -13,6 +13,17 @@ function getCurrentUrl(){
     })
     return url
 }
+
+function isValidUrl(){
+    if (url.startsWith("https://www.royalroad.com/fiction/")) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
 /*
 function hideText(text, btn) {
     // hide the payment failure text
